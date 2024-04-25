@@ -1,0 +1,74 @@
+footer {
+    min-width: 270px;
+}
+
+ .pie {
+    /* font-weight: 20px; */
+    color: rgb(219, 209, 209);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 1px 7px 1px rgb(121 121 129), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 2);
+}
+
+#titulo-pie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-family: 'Della Respira';
+}
+
+a {
+    text-decoration: none;
+}
+
+.cont-iconos-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-iconos-footer a:focus {
+    box-shadow: 0px 0px 10px #a3a37a;
+    outline: 0;
+    border-radius: 20px;
+}
+
+.icono-red-footer {
+    position: relative;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 20px;
+    color: #615c6b;
+    border: 1px solid #336838;
+    box-shadow: 0px 0px 11px 2px #686853;
+}
+
+.icono-red-footer:hover {
+    /* background-color: #a3a37a; */
+    /* color: white; */
+    color:#3d8a7c;
+    border: 1px solid white;
+    /* text-shadow: 1px 1px 3px #424040; */
+    border:1px solid rgba(0, 0, 0, 0.486);
+    box-shadow:inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+}
+
+footer p {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    font-family:'Della Respira';
+}
+
+.derechoAutor span {
+    text-shadow: 0px 1px 4px #ffffff;
+}

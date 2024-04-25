@@ -1,0 +1,26 @@
+@import "./scss/base/reset";
+@import "./scss/base/fonts";
+@import "./scss/utils/variables";
+@import "./scss/utils/espaciado";
+@import "./scss/components/boton";
+@import "./scss/components/filtros";
+@import "./scss/components/spinner";
+@import "./scss/layouts/nav";
+@import "./scss/layouts/tarjetas";
+@import "./scss/layouts/form";
+@import "./scss/layouts/footer";
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    min-width: 270px; 
+}
+
+.hidden {
+    display:none;
+}

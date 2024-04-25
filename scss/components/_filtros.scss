@@ -1,0 +1,101 @@
+/* lo que viene es para ventana grande */
+.filtros-vs{
+    /* display:grid; */
+    /* width:70%;
+    display: flex;
+    align-items: flex-end;
+    gap:40px;
+    margin:auto; */
+    /* margin-inline: 30px; */
+    /* grid-template-columns: repeat(2, minmax(min(100%, 78px), 1fr)); */
+
+    .filtros{
+        /* justify-content: flex-end; */
+
+        /* margin:0px;
+        display:grid;
+        grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr)); */
+    }
+}
+
+
+
+   
+
+.filtro {
+    gap: 5px;
+}
+
+.filtros {
+    /* width: 80%; */
+    display: flex;
+    /* flex-direction:column; */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+label {
+    font-family: "Della Respira", sans-serif;
+    font-size: 12px;
+}
+
+#btns-accion-filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+select:hover {
+    font-weight: 800;
+}
+
+select option:checked {
+    background-color: #65646095;
+}
+
+select {
+    outline: none;
+    height: 30px;
+    font-family: "Della Respira", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    width: 100%;
+    color: #3d3b3c;
+    background-color: #ffffff;
+    border: 1px solid #bdc0c2;
+    align-items: center;
+
+}
+
+.select {
+    /* overflow: hidden; */
+    /* background: #fff url("./icono/flecha_select.png") no-repeat 90% center; */
+}
+
+
+select:focus {
+    border: 1px solid rgba(0, 0, 0, 0.486);
+    box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+}
+
+select:active {
+    border: 1px solid rgba(0, 0, 0, 0.486);
+    box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+}
+
+select:hover {
+    font-weight: 800;
+}
+
+#contenedor-filtros{
+    width:100%;
+    height:auto;
+}
+
+.conten-filtros {
+    display: grid;
+    column-gap: 5px;
+    grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr));
+}

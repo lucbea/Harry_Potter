@@ -1,0 +1,39 @@
+nav {
+    min-width: 270px;
+}
+
+
+.encabezado {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+#titulo {
+        /* width: 200px; */
+    /* height: 40px; */
+    margin: 12px 5px auto 35px;
+    font-size: 18px;
+    height:auto;
+    font-family: "Cinzel";
+    /* display: flex; */
+    /* flex-flow: row; */
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+}
+
+#btn-nueva-tarj {
+    font-size: 11px;
+   
+    
+   
+}
+#btn-nueva-tarj:focus {
+    
+    box-shadow: 0px 0px 10px #a3a37a;
+    
+   
+}

@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+
+select, input {
+    all: unset;
+    cursor: pointer;
+}
+
+input, select {
+    box-sizing: border-box;
+}

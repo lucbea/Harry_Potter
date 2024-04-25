@@ -1,0 +1,30 @@
+utton:focus {
+    
+    border:1px solid rgba(0, 0, 0, 0.486);
+    box-shadow:inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+}
+
+
+.btn {
+    text-align:center;
+    margin-block: 12px;
+    padding: 6px 15px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px #4f4250;
+    box-shadow: 2px 3px 6px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+ }
+
+ .btn-form{
+    width: 63px;
+ }
+ 
+.btn:hover {
+    /* background-color: #d0cacab9; */
+    /* box-shadow: 0px 0px 7px #ac8008; */
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+}
+
+.btn p:hover {
+    transform: scale(1.15);
+    /* font-weight: 800; */
+}
