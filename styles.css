@@ -47,16 +47,26 @@ input, select {
   src: url(./fonts/Harry_Potter.TTF);
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+:root {
+  --orientation: portrait;
+  --altoPantalla: 200;
+}
+
 main {
-  padding: 10px 10px 10px;
+  margin-top: 80px;
+  padding-inline: 10px;
 }
 
 section {
-  margin-top: 15px;
+  margin-block: 20px;
+}
+
+#titulo {
+  margin: 5px 5px auto 5%;
 }
 
 #btn-nueva-tarj {
-  margin-inline: 40px;
+  margin-right: 7%;
 }
 
 #contenidoPersonaje:hover img {
@@ -142,7 +152,7 @@ footer {
   margin: 7px;
 }
 
-utton:focus {
+button:focus {
   border: 1px solid rgba(0, 0, 0, 0.486);
   box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
 }
@@ -171,35 +181,122 @@ utton:focus {
   /* font-weight: 800; */
 }
 
-/* lo que viene es para ventana grande */
-.filtros-vs {
-  /* display:grid; */
-  /* width:70%;
+.cont-filtros-vs {
   display: flex;
+  justify-content: center;
   align-items: flex-end;
-  gap:40px;
-  margin:auto; */
-  /* margin-inline: 30px; */
-  /* grid-template-columns: repeat(2, minmax(min(100%, 78px), 1fr)); */
+  background-color: #f2f2f2;
+  width: 100%;
+  z-index: 10;
+  top: 90px;
+  left: 0;
+  height: 110px;
+  /* padding-bottom: 10px; */
 }
-.filtros-vs .filtros {
-  /* justify-content: flex-end; */
-  /* margin:0px;
-  display:grid;
-  grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr)); */
+@media screen and (min-width: 500px) {
+  .cont-filtros-vs {
+    position: fixed;
+    padding-bottom: 10px;
+    height: 90px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .cont-filtros-vs {
+    position: fixed;
+    padding-bottom: 10px;
+    height: 90px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .cont-filtros-vs {
+    position: fixed;
+    padding-bottom: 10px;
+    height: 90px;
+  }
+}
+
+.filtros-vs {
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 3px;
+  width: 80%;
+}
+@media screen and (min-width: 500px) {
+  .filtros-vs {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .filtros-vs {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtros-vs {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtros-vs {
+    width: 60%;
+  }
 }
 
 .filtro {
   gap: 5px;
 }
+@media screen and (min-width: 500px) {
+  .filtro {
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .filtro {
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtro {
+    gap: 15px;
+  }
+}
 
 .filtros {
   /* width: 80%; */
   display: flex;
-  /* flex-direction:column; */
   justify-content: center;
   align-items: center;
   gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr));
+}
+@media screen and (min-width: 500px) {
+  .filtros {
+    justify-content: flex-end;
+    margin: 0px;
+    margin-bottom: 3px;
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .filtros {
+    justify-content: flex-end;
+    margin: 0px;
+    margin-bottom: 3px;
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtros {
+    justify-content: flex-end;
+    margin: 0px;
+    margin-bottom: 3px;
+    gap: 15px;
+  }
 }
 
 label {
@@ -288,6 +385,14 @@ select:hover {
     --angle: 360deg;
   }
 }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+
 nav {
   min-width: 270px;
 }
@@ -299,19 +404,16 @@ nav {
   align-items: center;
   background-color: black;
   color: white;
+  box-shadow: 0px 1px 7px 1px rgb(121, 121, 129), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
 }
 
 #titulo {
-  /* width: 200px; */
-  /* height: 40px; */
-  margin: 12px 5px auto 35px;
   font-size: 18px;
-  height: auto;
-  font-family: "Cinzel";
-  /* display: flex; */
-  /* flex-flow: row; */
-  /* justify-content: flex-start; */
-  /* align-items: center; */
+}
+
+#tit-img {
+  height: 80px;
+  object-fit: cover;
 }
 
 #btn-nueva-tarj {
@@ -322,17 +424,35 @@ nav {
   box-shadow: 0px 0px 10px #a3a37a;
 }
 
-main {
-  min-width: 270px;
-}
-
 #tarjetas {
   min-width: 250px;
+  padding-inline: 3%;
+}
+@media screen and (min-width: 500px) {
+  #tarjetas {
+    margin-inline: 40px;
+    margin-top: 120px;
+    padding-inline: 0px;
+  }
+}
+@media screen and (min-width: 970px) {
+  #tarjetas {
+    margin-inline: 70px;
+    margin-top: 120px;
+    padding-inline: 0px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  #tarjetas {
+    margin-inline: 13%;
+    margin-top: 120px;
+    padding-inline: 0px;
+  }
 }
 
 #content-tarjetas {
   /* margin-inline: 20px;
-  margin-top: 40px; */
+
   /* en fomato responsive myor  margin-inline:60px; */
 }
 
@@ -340,8 +460,18 @@ main {
 #total {
   display: grid;
   row-gap: 30px;
-  column-gap: 40px;
+  column-gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+@media screen and (min-width: 1310px) {
+  #total {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  }
+}
+@media screen and (min-width: 1690px) {
+  #total {
+    grid-template-columns: repeat(3, minmax(min(100%, 300px), 1fr));
+  }
 }
 
 /* estilo del contenedor de personaje */
@@ -356,6 +486,7 @@ main {
   border-radius: 10px;
   box-shadow: rgb(0, 0, 0) 0px 0px 4px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
   transition: transform 0.7s ease;
+  max-width: 340x;
 }
 
 #contenidoPersonaje:hover {
@@ -706,6 +837,10 @@ body {
   background-color: #f2f2f2;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
+  min-width: 270px;
+}
+
+main {
   min-width: 270px;
 }
 

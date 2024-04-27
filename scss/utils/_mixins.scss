@@ -1,0 +1,20 @@
+//Poner en variables
+$breakpoints: (
+  sm: 500px,
+  md: 970px,
+  lg: 1310px,
+  xl: 1690px
+);
+
+
+  
+  @mixin responsive($breakpointsMap, $targetBreakpoints...) {
+    @each $breakpoint in $targetBreakpoints {
+      $value: map-get($breakpointsMap, $breakpoint);
+      @media screen and (min-width: $value) {
+        @content;
+      }
+    }
+  }
+  
+ 

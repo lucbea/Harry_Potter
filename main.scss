@@ -1,6 +1,7 @@
 @import "./scss/base/reset";
 @import "./scss/base/fonts";
 @import "./scss/utils/variables";
+@import "./scss/utils/mixins";
 @import "./scss/utils/espaciado";
 @import "./scss/components/boton";
 @import "./scss/components/filtros";
@@ -20,6 +21,12 @@ body {
     font-family: 'Roboto', sans-serif;
     min-width: 270px; 
 }
+
+main {
+    min-width: 270px;
+}
+
+
 
 .hidden {
     display:none;

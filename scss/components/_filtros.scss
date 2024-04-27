@@ -1,38 +1,74 @@
-/* lo que viene es para ventana grande */
-.filtros-vs{
-    /* display:grid; */
-    /* width:70%;
+// @mixin comun-cont-filtros-vs {    
+// }
+
+
+.cont-filtros-vs {
     display: flex;
+    justify-content: center;
     align-items: flex-end;
-    gap:40px;
-    margin:auto; */
-    /* margin-inline: 30px; */
-    /* grid-template-columns: repeat(2, minmax(min(100%, 78px), 1fr)); */
+    background-color: #f2f2f2;
+    width: 100%;
+    z-index: 10;
+    top: 90px;
+    left: 0;
+    height: 110px;
+   
 
-    .filtros{
-        /* justify-content: flex-end; */
 
-        /* margin:0px;
-        display:grid;
-        grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr)); */
+    
+    // height: 110px;
+    /* padding-bottom: 10px; */
+  
+    // Utilización del mixin responsive para uno o varios breakpoints
+    @include responsive($breakpoints, sm, md, lg) {
+      position: fixed;
+      padding-bottom: 10px;
+      height: 90px;
     }
+  }
+
+// Llamar al mixin responsive con cada valor por separado
+
+@mixin comun-filtros-vs {
+    display:flex;
+    gap:30px; 
 }
 
-
-
-   
+.filtros-vs{
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-end;
+    margin-bottom: 3px;
+    width:80%;
+    @include responsive($breakpoints, sm, md, lg) {
+        @include comun-filtros-vs; 
+      }    
+      @include responsive($breakpoints, lg) {
+        width:60%; 
+      }    
+}
 
 .filtro {
     gap: 5px;
+    @include responsive($breakpoints, sm, md, lg) {
+        gap: 15px;
+    }
 }
 
 .filtros {
     /* width: 80%; */
     display: flex;
-    /* flex-direction:column; */
     justify-content: center;
     align-items: center;
     gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr));
+    @include responsive($breakpoints, sm, md, lg) {
+        justify-content: flex-end;
+        margin:0px;
+        margin-bottom: 3px;
+        gap: 15px;
+    }
 }
 
 label {
@@ -89,9 +125,9 @@ select:hover {
     font-weight: 800;
 }
 
-#contenedor-filtros{
-    width:100%;
-    height:auto;
+#contenedor-filtros {
+    width: 100%;
+    height: auto;
 }
 
 .conten-filtros {

@@ -1,11 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asincronismo - Harry Potter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="https://kit.fontawesome.com/a71ade6c0e.js" crossorigin="anonymous"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./img/favicon.png" type="image/x-icon">
+    <title>Harry Potter</title>
 </head>
+
 <body>
-    
+
+    <header>
+        <nav class="encabezado">
+            <div id="titulo">
+                <!-- <H1 class="hidden">HARRY POTTER</H1> -->
+                <img id="tit-img" src="./img/titulo transparente dor.png" alt="">
+            </div>
+            <button id="btn-nueva-tarj" class="btn">
+                <p>Nueva CARD</p>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <div id="spinner" class="hidden g-container">
+            <div class="g-triangle"></div>
+        </div>
+        <!-- Opciones de filtros -->
+        <section>
+            <div class="cont-filtros-vs">
+                <div class="filtros-vs">
+                    <form class="filtros" action="" method="post">
+                        <div class="filtro">
+                            <label for="filtro-casa">Casa</label>
+                            <div class="select">
+                                <select id="filtro-casa"><span>▼</span>
+                                    <option value="toda">Todas</option>
+                                    <option value="gryf">Gryffindor</option>
+                                    <option value="rave">Ravenclaw</option>
+                                    <option value="slyt">Slytherin</option>
+                                    <option value="huff">Hufflepuff</option>
+                                    <option value="desc">Desconocida</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filtro">
+                            <label for="filtro-especie">Especie</label>
+                            <div class="select">
+                                <select id="filtro-especie">
+                                    <option value="toda">Todas</option>
+                                    <option value="mugg">Muggle</option>
+                                    <option value="mest">Mestizo</option>
+                                    <option value="sang">Sangre Pura</option>
+                                    <option value="hibr">Híbrido</option>
+                                    <option value="otra">Otra</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filtro">
+                            <label for="filtro-estado">Estado</label>
+                            <div class="select">
+                                <select id="filter-estado">
+                                    <option value="todo">Todos</option>
+                                    <option value="vivo">Vivo</option>
+                                    <option value="muer">Muerto</option>
+                                    <option value="desc">Desconocido</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div id="btns-accion-filtros">
+                        <button type="button" id="btn-busc" class="btn">
+                            <p>Buscar</p>
+                        </button>
+                        <button type="button" id="btn-cancel-busc" class="btn">
+                            <p>Borrar</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="tarjetas">
+                <div id="content-tarjetas">
+                    <div id="total">
+                        <div id="contenidoPersonaje" class="centrado-personaje">
+                            <div id="imagen">
+                                <img src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
+                            </div>
+
+                            <div id="datos">
+                                <div>
+                                    <p id="nomb">HARRY POTTER</p>
+                                </div>
+                                <div class="info-apar hidden">
+                                    <p id="info-relevante">Harry Potter es el protagonista principal de la
+                                        saga de películas que llevan su nombre</p>
+                                    <p class="info">Casa: Gryffindor</p>
+                                    <p class="info">Origen: mestizo</p>
+                                    <p id="estado" class="info">Estado: vivo</p>
+
+                                    <p id="mas-info" class="hidden">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing
+                                        elit. Obcaecati aliquid
+                                        praesentium dolore exercitationem culpa? Alias tempore rerum laboriosam nihil
+                                        blanditiis
+                                        beatae in, illo nemo quaerat provident facere praesentium consequuntur id!</p>
+                                </div>
+                            </div>
+                            <div id="mas">
+                                <button id="btn-mas" class="btn">
+                                    <p id="mas-info">Leer + <span class="flecha hidden">→</span></p>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="contenidoPersonaje" class="centrado-personaje">
+                            <div id="imagen">
+                                <img src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
+                            </div>
+
+                            <div id="datos">
+                                <div>
+                                    <p id="nomb">HARRY POTTER</p>
+                                </div>
+                                <div class="info-apar hidden">
+                                    <p id="info-relevante">Harry Potter es el protagonista principal de la
+                                        saga de películas que llevan su nombre</p>
+                                    <p class="info">Casa: Gryffindor</p>
+                                    <p class="info">Origen: mestizo</p>
+                                    <p id="estado" class="info">Estado: vivo</p>
+
+                                    <p id="mas-info" class="hidden">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing
+                                        elit. Obcaecati aliquid
+                                        praesentium dolore exercitationem culpa? Alias tempore rerum laboriosam nihil
+                                        blanditiis
+                                        beatae in, illo nemo quaerat provident facere praesentium consequuntur id!</p>
+                                </div>
+                            </div>
+                            <div id="mas">
+                                <button id="btn-mas" class="btn">
+                                    <p id="mas-info">Leer + <span class="flecha hidden">→</span></p>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="contenidoPersonaje" class="centrado-personaje">
+                            <div id="imagen">
+                                <img src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
+                            </div>
+
+                            <div id="datos">
+                                <div>
+                                    <p id="nomb">HARRY POTTER</p>
+                                </div>
+                                <div class="info-apar hidden">
+                                    <p id="info-relevante">Harry Potter es el protagonista principal de la
+                                        saga de películas que llevan su nombre</p>
+                                    <p class="info">Casa: Gryffindor</p>
+                                    <p class="info">Origen: mestizo</p>
+                                    <p id="estado" class="info">Estado: vivo</p>
+
+                                    <p id="mas-info" class="hidden">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing
+                                        elit. Obcaecati aliquid
+                                        praesentium dolore exercitationem culpa? Alias tempore rerum laboriosam nihil
+                                        blanditiis
+                                        beatae in, illo nemo quaerat provident facere praesentium consequuntur id!</p>
+                                </div>
+                            </div>
+                            <div id="mas">
+                                <button id="btn-mas" class="btn">
+                                    <p id="mas-info">Leer + <span class="flecha hidden">→</span></p>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="contenidoPersonaje" class="centrado-personaje">
+                            <div id="imagen">
+                                <img src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
+                            </div>
+
+                            <div id="datos">
+                                <div>
+                                    <p id="nomb">HARRY POTTER</p>
+                                </div>
+                                <div class="info-apar hidden">
+                                    <p id="info-relevante">Harry Potter es el protagonista principal de la
+                                        saga de películas que llevan su nombre</p>
+                                    <p class="info">Casa: Gryffindor</p>
+                                    <p class="info">Origen: mestizo</p>
+                                    <p id="estado" class="info">Estado: vivo</p>
+
+                                    <p id="mas-info" class="hidden">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing
+                                        elit. Obcaecati aliquid
+                                        praesentium dolore exercitationem culpa? Alias tempore rerum laboriosam nihil
+                                        blanditiis
+                                        beatae in, illo nemo quaerat provident facere praesentium consequuntur id!</p>
+                                </div>
+                            </div>
+                            <div id="mas">
+                                <button id="btn-mas" class="btn">
+                                    <p id="mas-info">Leer + <span class="flecha hidden">→</span></p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+        <section id="formulario">
+            <div class="form-tarj">
+                <form action="./index.html">
+
+                    <div class="ing-dat">
+                        <label for="nombre">Nombre*</label>
+                        <input tabindex="0" type="text" name="nombre" id="nombre" placeholder="p. ej.: Harry Potter"
+                            required>
+                        <i class="far fa-check-circle icon-valido" aria-hidden="true"></i>
+                        <i class="far fa-times-circle icon-invalido" aria-hidden="true"></i>
+                    </div>
+                    <div class="ing-dat">
+                        <label for="info">Información relevante*</label>
+                        <input tabindex="0" type="text" name="info" id="info" placeholder="p. ej.: Pérez" required>
+                        <i class="far fa-check-circle icon-valido" aria-hidden="true"></i>
+                        <i class="far fa-times-circle icon-invalido" aria-hidden="true"></i>
+                    </div>
+                    <div class="ing-dat">
+                        <label for="+info">Más información*</label>
+                        <input tabindex="0" type="text" name="+info" id="+info" placeholder="Otra información aquí"
+                            required>
+                        <i class="far fa-check-circle icon-valido" aria-hidden="true"></i>
+                        <i class="far fa-times-circle icon-invalido" aria-hidden="true"></i>
+                    </div>
+
+                    <div id="cont-filtros-url">
+                        <div>
+                            <div id="contenedor-filtros">
+                                <div class="ing-dat conten-filtros" action="" method="post">
+                                    <div class="filtro">
+                                        <label for="filtro-casa">Casa</label>
+                                        <div class="select">
+                                            <select id="filtro-casa">
+                                                <option value="toda">Todas</option>
+                                                <option value="gryf">Gryffindor</option>
+                                                <option value="rave">Ravenclaw</option>
+                                                <option value="slyt">Slytherin</option>
+                                                <option value="huff">Hufflepuff</option>
+                                                <option value="desc">Desconocida</option>
+                                            </select>
+                                        </div>
+                                        <i class="far fa-check-circle icon-valido" aria-hidden="true"></i>
+                                        <i class="far fa-times-circle icon-invalido" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="filtro">
+                                        <label for="filtro-especie">Especie</label>
+                                        <div class="select">
+                                            <select id="filtro-especie">
+                                                <option value="toda">Todas</option>
+                                                <option value="mugg">Muggle</option>
+                                                <option value="mest">Mestizo</option>
+                                                <option value="sang">Sangre Pura</option>
+                                                <option value="hibr">Híbrido</option>
+                                                <option value="otra">Otra</option>
+                                            </select>
+                                        </div>
+                                        <i class="far fa-check-circle icon-valido" aria-hidden="true"></i>
+                                        <i class="far fa-times-circle icon-invalido" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="filtro">
+                                        <label for="filtro-estado">Estado</label>
+                                        <div class="select">
+                                            <select id="filter-estado">
+                                                <option value="todo">Todos</option>
+                                                <option value="vivo">Vivo</option>
+                                                <option value="muer">Muerto</option>
+                                                <option value="desc">Desconocido</option>
+                                            </select>
+                                        </div>
+                                        <i class="far fa-check-circle icon-valido" aria-hidden="true"></i>
+                                        <i class="far fa-times-circle icon-invalido" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ing-dat">
+                                <label for="url">URL de la imagen*</label>
+                                <input tabindex="0" type="url" name="url" id="url" placeholder="https://www.google.com"
+                                    required>
+                                <i class="far fa-check-circle icon-valido" aria-hidden="true"></i>
+                                <i class="far fa-times-circle icon-invalido" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div id="conten-img-form">
+                            <div id="img-form">
+                                <img id="imag" src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <button class="btn btn-form" value="Cancelar" tabindex="0">Cancelar</button>
+                        <button class="btn btn-form" type="submit" value="Enviar" tabindex="0">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="pie">
+        <div id="titulo-pie">
+            <h2>Trabajo Asincronismo</h2>
+            <h2>ADA</h2>
+        </div>
+        <div class="cont-iconos-footer">
+            <a class="icono-footer" href="https://github.com/lucbea" tabindex="0">
+                <i class="fa-brands fa-github-alt icono-red-footer"></i>
+            </a>
+            <a class="icono-footer" href="https://www.linkedin.com/in/lucía-ferrer-49ba53189/" tabindex="0">
+                <i class="fa-brands fa-linkedin-in icono-red-footer"></i>
+            </a>
+            <a class="icono-footer" href="mailto:ferrerlb@gmail.com" tabindex="0">
+                <i class="fa-solid fa-envelope icono-red-footer"></i>
+            </a>
+        </div>
+        <div class="derechoAutor">
+            <p>Hecho con <span>❤️</span> por LucBea</p>
+        </div>
+    </footer>
+    <script src="./app-style.js"></script>
 </body>
+
 </html>
