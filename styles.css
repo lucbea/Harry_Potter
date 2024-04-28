@@ -1,0 +1,851 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+select, input {
+  all: unset;
+  cursor: pointer;
+}
+
+input, select {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Cinzel";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfYPlDX5Z.woff2) format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Cinzel";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Della Respira";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/Della_Respira/DellaRespira-Regular.ttf) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Harry Potter";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/Harry_Potter.TTF);
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+:root {
+  --orientation: portrait;
+  --altoPantalla: 200;
+}
+
+main {
+  margin-top: 80px;
+  padding-inline: 10px;
+}
+
+section {
+  margin-block: 20px;
+}
+
+#titulo {
+  margin: 5px 5px auto 5%;
+}
+
+#btn-nueva-tarj {
+  margin-right: 7%;
+}
+
+#contenidoPersonaje:hover img {
+  margin-top: 20px;
+}
+
+#contenidoPersonaje:hover #nomb {
+  margin-bottom: 0px;
+}
+
+#contenidoPersonaje:hover img {
+  margin-top: 20px;
+}
+
+#nomb {
+  margin: 5px 0px 50px;
+}
+
+#datos {
+  padding-inline: 25px;
+}
+
+.info {
+  margin-block: 3px;
+}
+
+#info-relevante {
+  margin-block: 5px;
+}
+
+.ing-dat {
+  margin-block: 16px;
+}
+
+#contenedor-filtros {
+  margin: auto;
+}
+
+.filtro {
+  margin-block: 5px;
+}
+
+.filtros {
+  margin-inline: auto;
+}
+
+label {
+  margin-left: 7px;
+  margin-bottom: 13px;
+}
+
+select {
+  padding-inline: 5px;
+}
+
+input {
+  /* margin-block: 5px; */
+  padding-inline: 5px;
+}
+
+#conten-img-form {
+  margin: auto;
+}
+
+.btns {
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 15px;
+  padding-block: 20px;
+}
+
+.cont-iconos-footer {
+  margin-block: 10px;
+}
+
+.icono-red-footer {
+  margin: 10px;
+}
+
+.derechoAutor span {
+  margin: 7px;
+}
+
+button:focus {
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+.btn {
+  text-align: center;
+  margin-block: 12px;
+  padding: 6px 15px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 7px #4f4250;
+  box-shadow: 2px 3px 6px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+.btn-form {
+  width: 63px;
+}
+
+.btn:hover {
+  /* background-color: #d0cacab9; */
+  /* box-shadow: 0px 0px 7px #ac8008; */
+  box-shadow: 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+.btn p:hover {
+  transform: scale(1.15);
+  /* font-weight: 800; */
+}
+
+.cont-filtros-vs {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #f2f2f2;
+  width: 100%;
+  z-index: 10;
+  top: 90px;
+  left: 0;
+  height: 110px;
+  /* padding-bottom: 10px; */
+}
+@media screen and (min-width: 500px) {
+  .cont-filtros-vs {
+    position: fixed;
+    padding-bottom: 10px;
+    height: 90px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .cont-filtros-vs {
+    position: fixed;
+    padding-bottom: 10px;
+    height: 90px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .cont-filtros-vs {
+    position: fixed;
+    padding-bottom: 10px;
+    height: 90px;
+  }
+}
+
+.filtros-vs {
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 3px;
+  width: 80%;
+}
+@media screen and (min-width: 500px) {
+  .filtros-vs {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .filtros-vs {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtros-vs {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtros-vs {
+    width: 60%;
+  }
+}
+
+.filtro {
+  gap: 5px;
+}
+@media screen and (min-width: 500px) {
+  .filtro {
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .filtro {
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtro {
+    gap: 15px;
+  }
+}
+
+.filtros {
+  /* width: 80%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr));
+}
+@media screen and (min-width: 500px) {
+  .filtros {
+    justify-content: flex-end;
+    margin: 0px;
+    margin-bottom: 3px;
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 970px) {
+  .filtros {
+    justify-content: flex-end;
+    margin: 0px;
+    margin-bottom: 3px;
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .filtros {
+    justify-content: flex-end;
+    margin: 0px;
+    margin-bottom: 3px;
+    gap: 15px;
+  }
+}
+
+label {
+  font-family: "Della Respira", sans-serif;
+  font-size: 12px;
+}
+
+#btns-accion-filtros {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+select:hover {
+  font-weight: 800;
+}
+
+select option:checked {
+  background-color: rgba(101, 100, 96, 0.5843137255);
+}
+
+select {
+  outline: none;
+  height: 30px;
+  font-family: "Della Respira", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  width: 100%;
+  color: #3d3b3c;
+  background-color: #ffffff;
+  border: 1px solid #bdc0c2;
+  align-items: center;
+}
+
+.select {
+  /* overflow: hidden; */
+  /* background: #fff url("./icono/flecha_select.png") no-repeat 90% center; */
+}
+
+select:focus {
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+select:active {
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+select:hover {
+  font-weight: 800;
+}
+
+#contenedor-filtros {
+  width: 100%;
+  height: auto;
+}
+
+.conten-filtros {
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr));
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.g-container {
+  width: 240px;
+  height: 240px;
+  filter: drop-shadow(0 0 5px hsl(68, 100%, 58%)) drop-shadow(0 0 10px hsl(270, 3%, 15%));
+}
+
+.g-triangle {
+  width: 240px;
+  height: 210px;
+  clip-path: polygon(50% 0%, 0% 100%, 3% 100%, 50% 5%, 96% 97%, 3% 97%, 0% 100%, 100% 100%);
+  background: conic-gradient(from var(--angle), hsl(68, 100%, 58%), hsl(270, 3%, 15%), hsl(68, 100%, 58%));
+  animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+nav {
+  min-width: 270px;
+}
+
+.encabezado {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 1px 7px 1px rgb(121, 121, 129), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+#titulo {
+  font-size: 18px;
+}
+
+#tit-img {
+  height: 80px;
+  object-fit: cover;
+}
+
+#btn-nueva-tarj {
+  font-size: 11px;
+}
+
+#btn-nueva-tarj:focus {
+  box-shadow: 0px 0px 10px #a3a37a;
+}
+
+#tarjetas {
+  min-width: 250px;
+  padding-inline: 3%;
+}
+@media screen and (min-width: 500px) {
+  #tarjetas {
+    margin-inline: 40px;
+    margin-top: 120px;
+    padding-inline: 0px;
+  }
+}
+@media screen and (min-width: 970px) {
+  #tarjetas {
+    margin-inline: 70px;
+    margin-top: 120px;
+    padding-inline: 0px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  #tarjetas {
+    margin-inline: 13%;
+    margin-top: 120px;
+    padding-inline: 0px;
+  }
+}
+
+#content-tarjetas {
+  /* margin-inline: 20px;
+
+  /* en fomato responsive myor  margin-inline:60px; */
+}
+
+/* estilo del contenedor de TODOS los personajes que muestra */
+#total {
+  display: grid;
+  row-gap: 30px;
+  column-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+@media screen and (min-width: 1310px) {
+  #total {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  }
+}
+@media screen and (min-width: 1690px) {
+  #total {
+    grid-template-columns: repeat(3, minmax(min(100%, 300px), 1fr));
+  }
+}
+
+/* estilo del contenedor de personaje */
+#contenidoPersonaje {
+  position: relative;
+  /* margin-block: 5px; */
+  /* margin-inline: auto; */
+  overflow: hidden;
+  height: 230px;
+  /* width: 100%; */
+  /* width: 100px; */
+  border-radius: 10px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 4px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
+  transition: transform 0.7s ease;
+  max-width: 340x;
+}
+
+#contenidoPersonaje:hover {
+  box-shadow: 0px 3px 9px 4px rgb(101, 93, 93), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#contenidoPersonaje:hover img {
+  transform: scale(1.22);
+}
+
+#contenidoPersonaje:hover #datos {
+  transform: translateY(-20px);
+}
+
+#contenidoPersonaje:hover .info-apar {
+  display: flex;
+}
+
+#imagen {
+  min-width: 250px;
+  display: flex;
+  overflow: hidden;
+  background-color: rgb(215, 215, 230);
+  border-radius: 10px;
+  /* background-size: cover; */
+}
+
+img {
+  overflow: hidden;
+  /* background-size: contain; */
+  transition: transform 0.7s ease, mrgin-top 0.7s easy;
+}
+
+/* estilos del contenedor que tiene datos principales del personaje */
+#datos {
+  position: absolute;
+  bottom: -10px;
+  color: white;
+  min-width: 210px;
+  width: 99%;
+  background-color: rgba(215, 215, 230, 0);
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.7s ease;
+  text-shadow: 1px 1px 1px black;
+}
+
+/* resalto del nombre del personaje */
+#nomb {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* width:100%; */
+  /* color: black; */
+  font-family: "cinzel";
+  text-shadow: 1px 1px 1px black;
+  /* box-shadow: 2px 3px 6px 0px rgb(241, 238, 238); */
+  /* box-shadow: 2px 3px 6px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
+  transition: transform 0.3s ease;
+}
+
+p {
+  /* margin: 4px 0px;  */
+  font-size: 11px;
+}
+
+.info {
+  text-align: justify;
+  font-size: 13px;
+  width: 100%;
+}
+
+.info-apar {
+  flex-direction: column;
+  justify-content: justify;
+}
+
+/*Estilos del espacio del botón Más info */
+#mas {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  color: rgb(247, 249, 242);
+  font-size: 11px;
+  font-weight: bold;
+  font-family: "Della Respira";
+}
+
+.form-tarj,
+form {
+  width: 100%;
+}
+
+.ing-dat {
+  min-width: 250px;
+  position: relative;
+  width: 100%;
+}
+
+.ing-dat:focus {
+  min-width: 250px;
+}
+
+label {
+  font-family: "Della Respira", sans-serif;
+  font-size: 12px;
+}
+
+select option:checked {
+  background-color: rgba(101, 100, 96, 0.5843137255);
+}
+
+/* select:hover option {
+    background-color: #2ec26e;
+}  */
+.filtros-vs select,
+input {
+  height: 30px;
+  font-family: "Della Respira", sans-serif;
+  /* text-align:left; */
+  font-size: 11px;
+  font-weight: 500;
+  /* margin-block: 5px 10px; */
+  width: 100%;
+  color: #3d3b3c;
+  background-color: #ffffff;
+  border: 1px solid #bdc0c2;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border-radius: 5px;
+}
+
+i {
+  height: auto;
+  position: absolute;
+  top: 10px;
+  z-index: 10;
+}
+
+/* .ingresoDatos {
+    height: inherit;
+} */
+.icon-valido {
+  color: #2ccd49;
+}
+
+.icon-invalido {
+  color: #761921;
+}
+
+/* ingreso formulario - esperando datos - borde lila */
+input:focus,
+select:focus .boton:focus {
+  /* box-shadow: 0px 0px 7px #4f4250;                 */
+  outline: 0;
+  box-shadow: inset 0px 0px 7px #4f4250, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+/* ingreso formulario */
+input:valid:focus {
+  /* border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+input:invalid:not(:placeholder-shown):focus {
+  border: 1px solid #f5414f;
+  box-shadow: inset 0px 0px 7px #f5414f, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+input:invalid:not(:placeholder-shown) {
+  border: 1px solid #e33946;
+  box-shadow: 0px 0px 3px #e33946;
+}
+
+input:valid {
+  border: 1px solid #7aa37c;
+  box-shadow: 0px 0px 3px #7aa37c;
+  /* border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #369555, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+/* iconos de valido o inválido para cada dato no mostrado */
+.icon-invalido,
+.icon-valido {
+  display: none;
+  position: absolute;
+  bottom: 8px;
+  right: 10Px;
+  transform: translateY(50%);
+}
+
+input:valid ~ .icon-valido,
+textarea:valid ~ .icon-valido,
+input:not(:placeholder-shown):invalid ~ .icon-invalido,
+textarea:not(:placeholder-shown):invalid ~ .icon-invalido {
+  display: block;
+}
+
+input:valid ~ .icon-valido,
+input:not(:placeholder-shown):invalid ~ .icon-invalido {
+  display: block;
+}
+
+#formulario select {
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+#formulario select:focus {
+  font-style: italic;
+  font-weight: 800;
+  font-size: 11px;
+  /* text-shadow:  0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);  */
+  /* display:flex; */
+  /* justify-content: center;
+  background-color: #ffffff; */
+}
+
+#formulario select option:checked {
+  background-color: rgba(101, 100, 96, 0.5843137255);
+  /* font-size: 14px; */
+}
+
+/* lo que viene es para ventana grande */
+#cont-filtros-url {
+  /* display:grid;
+  grid-template-columns: repeat(2, minmax(min(100%, 78px), 1fr)); */
+}
+
+.btns {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Que los botones del formulario tengan el mismo ancho */
+#conten-img-form {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+#img-form {
+  min-width: 200px;
+  overflow: hidden;
+  width: auto;
+  height: 120px;
+  border-radius: 20px;
+  border: 2px solid rgba(62, 61, 61, 0.393);
+}
+
+#imag {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+#img-form:hover {
+  box-shadow: 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+footer {
+  min-width: 270px;
+}
+
+.pie {
+  /* font-weight: 20px; */
+  color: rgb(219, 209, 209);
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 1px 7px 1px rgb(121, 121, 129), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+#titulo-pie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-family: "Della Respira";
+}
+
+a {
+  text-decoration: none;
+}
+
+.cont-iconos-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont-iconos-footer a:focus {
+  box-shadow: 0px 0px 10px #a3a37a;
+  outline: 0;
+  border-radius: 20px;
+}
+
+.icono-red-footer {
+  position: relative;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 20px;
+  color: #615c6b;
+  border: 1px solid #336838;
+  box-shadow: 0px 0px 11px 2px #686853;
+}
+
+.icono-red-footer:hover {
+  /* background-color: #a3a37a; */
+  /* color: white; */
+  color: #3d8a7c;
+  border: 1px solid white;
+  /* text-shadow: 1px 1px 3px #424040; */
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+}
+
+footer p {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  font-family: "Della Respira";
+}
+
+.derechoAutor span {
+  text-shadow: 0px 1px 4px #ffffff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  min-width: 270px;
+}
+
+main {
+  min-width: 270px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
