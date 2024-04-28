@@ -1,49 +1,76 @@
-// Función para manejar el evento de cambio de tamaño de la ventana y detectar la orientación
-// function detectPantalla() {
-//     let orientation = window.innerWidth > window.innerHeight ? "landscape" : "portrait";
-//     document.documentElement.classList.remove('landscape', 'portrait');
-//     // console.log(orientation);
-//     document.documentElement.classList.add(orientation);
-//     console.log(orientation);
-//     let altoPantalla = window.innerHeight;
-//     // document.documentElement.classList.add(altoPantalla);
-//     // // document.documentElement.style.setProperty('$altoPantalla', altoPantalla + 'px');
-//     console.log(altoPantalla)
-//     // Aplicar estilos responsivos basados en la orientación detectada
-//     let elements = document.querySelectorAll('.element');
-//     elements.forEach(function(element) {
-//     element.classList.remove('sm', 'md', 'desktop');
-//     element.classList.add(orientation);
-    
-//     });
-//   }
-  
-  // Agrega un listener para el evento resize
-//   window.addEventListener("resize", detectPantalla);
+// Footer al final
+let $footer = document.getElementById('footer');
+let $pie = document.getElementById("pie");
+let altoPantalla;
+let anchoPantalla = window.innerWidth;
+const lugarFooter = () => {
+  let deberEstar = 0;
+  let topFooter = 0;
+  let altoFooter = 0;
+  let marginTop = 0;
+  topFooter = $footer.getBoundingClientRect().top;
+  altoPantalla = window.innerHeight;
+  anchoPantalla < 500 ? altoFooter = 60 : altoFooter = 60;
+  deberEstar = altoPantalla - altoFooter;
+  marginTop = deberEstar - topFooter ;
+  topFooter < deberEstar ? $footer.style.marginTop = marginTop + "px" : $footer.style.marginTop = "15px";
+  topFooter = $footer.getBoundingClientRect().top;
+}
 
-  //Agrega variable para utilizar en mixins (por landscape) con el alto de la pantalla
-//   document.documentElement.style.setProperty('--altoscreen', alturaPantalla + 'px');
-// const fs = require('fs');
 
-// Obtener la altura de la pantalla
-// const altoPantalla =  window.innerHeight; 
+window.addEventListener('resize', lugarFooter);
+lugarFooter();
 
-// Obtener el ancho de la pantalla
-// const anchoPantalla = window.innerWidth;
 
-// // Modificar los estilos CSS según el ancho de la pantalla
-// document.documentElement.style.setProperty('--altoPantalla', altoPantalla + 'px');
+let $btnNuevaTarj = document.getElementById("btn-nueva-tarj");
+let $formTarj = document.getElementById("form-tarj");
+let $contFiltrosVs = document.getElementById("cont-filtros-vs");
+let $contTarj = document.getElementById("cont-tarj");
+let $contUnaTarj = document.getElementById("cont-una-tarj");
+let $contTotalUnaTarj = document.getElementById("cont-total-una-tarj");
+let $btnHomeUna = document.getElementById("btn-home-una");
+let $btnCancPost = document.getElementById("btn-canc-post");
+let $btnCancelBusc = document.getElementById ("btn-cancel-busc");
+let $selFiltroCasa = document.getElementById("filtro-casa");
+let $selFiltroEspecie = document.getElementById("filtro-especie");
+let $selFiltroEstado = document.getElementById("filtro-estado");
 
-  // Generar el contenido del archivo variables.scss con la variable --altoscreen
-// const contenido = `:root {
-    // --altoscreen: ${alturaPantalla}px;
-//   }`;
-  
-  // Escribir el contenido en el archivo variables.scss
-//   fs.writeFileSync('./scss/utils/variables.scss', contenido);
-  
-  // Llama a la función detectPantalla una vez para mostrar el tamaño inicial de la pantalla
-//   detectPantalla();
-  
+
+let elemOculMost = [$formTarj, $contFiltrosVs, $contTarj, $contTotalUnaTarj];
+
+// **************** Evento Nueva Tarjeta ******************
+$btnNuevaTarj.addEventListener("click", () => mostrar($formTarj));
+
+// **************** Evento Cancelar nueva Tarjeta ******************
+$btnCancPost.addEventListener("click", () => mostrar($contTarj, $contFiltrosVs));
+
+// **************** Evento Ir al inicio desde una Tarjeta ******************
+$btnHomeUna.addEventListener("click", () => mostrar($contTarj, $contFiltrosVs));
+
+// **************** Evento Borrar Filtros ******************
+$btnCancelBusc.addEventListener("click", () => borrarFiltros());
+
+
+//  ***** Función ocultar todos los contenedores y mostrar los necesarios
+const borrarFiltros = () => {
+  $selFiltroCasa.value = "toda";
+  $selFiltroEspecie.value = "toda";
+  $selFiltroEstado.value = "todo";
+}
+
+
+//  ***** Función ocultar todos los contenedores y mostrar los necesarios
+const mostrar = (...elementos) => {
+  for (let i = 0; i < elemOculMost.length; i++) {
+    elemOculMost[i].classList.add("hidden")
+  }
+  elementos.forEach(elem => {
+    elem.classList.remove("hidden");
+  });
+  lugarFooter();
+}
+
+
+
 
 

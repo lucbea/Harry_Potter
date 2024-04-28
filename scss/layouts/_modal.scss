@@ -1,0 +1,23 @@
+#fondo-modal {
+    position: relative;
+    // top:0;
+    // left:0;
+    // background-color: black;
+    // // width:1000px;
+    // // height:1000px;
+    // width: 100vw;
+    // height: 100vh;
+    z-index: 60;
+}
+
+#modal {
+    position: absolute;
+    top: -77px;
+    left: -7px;
+    background-color: #e34ba27a;
+    width: 98vw;
+    height: 100vh;
+    z-index: 61;
+    border-radius: 7px;
+    min-width: 264px;
+}

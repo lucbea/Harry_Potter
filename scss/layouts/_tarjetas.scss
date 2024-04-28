@@ -1,4 +1,4 @@
-#tarjetas {
+#cont-tarj {
     min-width: 250px;
     padding-inline:3%;
     @include responsive($breakpoints, sm) {
@@ -18,16 +18,10 @@
     }
 }
 
-#content-tarjetas {
-    // margin-top: 20px;
-    /* margin-inline: 20px;
+// #content-tarjetas {
+  
+// }
 
-    /* en fomato responsive myor  margin-inline:60px; */
-    // display:flex;
-    // justify-content:center;
-}
-
- /* estilo del contenedor de TODOS los personajes que muestra */
 #total {
     display: grid;
     row-gap: 30px;
@@ -85,7 +79,7 @@
 
 img{
     overflow: hidden;
-    /* background-size: contain; */
+    object-fit: cover;
     transition: transform 0.7s ease, mrgin-top 0.7s easy;
 }
 

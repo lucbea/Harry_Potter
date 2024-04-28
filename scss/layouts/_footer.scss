@@ -3,13 +3,21 @@ footer {
 }
 
  .pie {
-    /* font-weight: 20px; */
     color: rgb(219, 209, 209);
     background-color: black;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    // flex-direction: column;
+    // align-items: center;
+    justify-content: center;
     box-shadow: 0px 1px 7px 1px rgb(121 121 129), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 2);
+    padding-block:20px;
+    @include responsive($breakpoints, sm, xsm, md, lg, xl) { // revisar xl se agregó después
+        // justify-content: space-between;
+        // flex-direction: row;
+        // justify-content: space-between;
+        // padding-inline:10%;
+        // box-shadow: 0px 1px 7px 1px rgb(121, 121, 129), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+      }
 }
 
 #titulo-pie{
@@ -69,6 +77,12 @@ footer p {
     font-family:'Della Respira';
 }
 
+.derechoAutor {
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 .derechoAutor span {
     text-shadow: 0px 1px 4px #ffffff;
 }

@@ -1,0 +1,159 @@
+#cont-total-una-tarj {
+    // height:460px;
+    margin:auto;
+
+    @include responsive($breakpoints, sm) {
+        // height:auto;
+    }
+}
+#cont-una-tarj {
+    margin-inline: 10px;
+    margin-block: 10px;
+    border: 3px  solid white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 0px #453e3e;
+    position:relative;
+    height:500px;
+    overflow: hidden;
+    max-width: 760px;
+    margin:auto;
+    @include responsive($breakpoints, sm) {
+        display:flex;
+        justify-content: flex-end;
+        // border: 1px solid #f3eeee70;
+        
+    // padding: 3px;
+        // flex-direction: row-reverse;
+        // flex-grow: 1;
+        // border: 3px solid white;
+        // max-width:750px;
+        // margin:auto;
+        overflow:hidden;
+        height:320px;
+    }
+}
+
+#imagen-una{
+    // overflow: hidden;
+    position:relative;
+    border-radius: 10px;
+    // border: 3px solid white;
+    // width:100%;
+    @include responsive($breakpoints, sm) {
+        width:80%;
+        // padding:25px;
+        height:auto;
+        // border:2px solid white;
+        // right:0;     
+        // background-color: rgba(240, 233, 233, 0.648);
+        // border-top-left-radius:0px;
+        // border-bottom-left-radius:0px;
+        // border-right: 3px solid white;
+        // border-block: 3px solid white;
+        display:block;
+        // align-items: center;
+    }
+    @include responsive($breakpoints, xsm) {
+        // width:50%;
+        // padding:25px;
+        // height:100%;
+        // right:0;     
+        // background-color: rgba(240, 233, 233, 0.648);
+        // border-top-left-radius:0px;
+        // border-bottom-left-radius:0px;
+        // border-right: 3px solid white;
+        // border-block: 3px solid white;
+        // display:flex;
+        // align-items: center;
+    }
+}
+
+#img-una {
+    // border-radius: 10px;
+    position:absolute;
+    top: -2px;
+    left:50%;
+    transform: translateX(-50%);
+    @include responsive($breakpoints, sm) {
+        transform: translateX(-40%);
+    }
+    // height:100%;
+    // width:100%;
+    
+    // 
+    // @include responsive($breakpoints, msm) {
+    //     border: 3px solid white;
+    //     height:90%;
+    // }
+    // @include responsive($breakpoints, xsm) {
+    //     border: 3px solid white;
+    //     display:flex;
+    //     width:100%;
+    // }
+}
+
+#datos-una {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    z-index: 49;
+    width: 100%;
+    background-color: rgba(240, 233, 233, 0.648);
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    /* border-bottom: 3px solid white; */
+    /* border-left: 3px solid white; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: grid;
+    gap: 3px;
+    grid-template-rows: repeat(3, minmax(min(20%, 18px), 60%));
+    @include responsive($breakpoints, sm) {
+        // position:relative;
+        border-bottom-right-radius:0px;
+        border-top-left-radius:10px;
+        width:50%;
+        height:100%;
+        // border: 0px solid white;
+        padding:25px;
+        background: linear-gradient(to right, rgb(242, 239, 239) 70%, rgba(255, 255, 255, 0));
+    }
+}
+
+#nomb-una {
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Della Respira';
+    text-shadow: 1px 1px 1px rgb(244, 235, 235);
+}
+
+.info-apar{
+
+}
+.info-una { 
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Della Respira';
+    @include responsive($breakpoints, sm) {
+        font-size:16px;
+    }
+}
+
+.info-tres{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Della Respira';
+    @include responsive($breakpoints, sm) {
+        margin-top:3px;
+    }
+}
+
+.info-dos {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Della Respira';
+  
+}
