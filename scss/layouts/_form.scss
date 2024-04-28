@@ -1,6 +1,28 @@
-.form-tarj,
 form {
     width: 100%;
+}
+
+.form-tarj {
+    
+    
+}
+#formulario{
+    max-width:750px;
+    margin:auto;
+    @include responsive($breakpoints, sm) {
+        // margin-inline: 5px;
+    }
+
+    @include responsive($breakpoints, xsm) {
+        padding-inline: 15px;
+        padding-block: 3px;
+        border: 1px solid rgba(29, 27, 27, 0.689);
+        border-radius: 10px;
+    }
+
+    @include responsive($breakpoints, md) {
+        padding-inline: 25px;
+    }
 }
 
 .ing-dat {
@@ -33,7 +55,7 @@ select option:checked {
 
 .filtros-vs select,
 input {
-    height: 30px;
+    height: 28px;
     font-family: "Della Respira", sans-serif;
     /* text-align:left; */
     font-size: 11px;
@@ -138,6 +160,7 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
     border: 1px solid rgba(0, 0, 0, 0.486);
     box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
+
 #formulario select:focus {
     font-style: italic;
     font-weight: 800;
@@ -156,13 +179,24 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
 
 
 /* lo que viene es para ventana grande */
-#cont-filtros-url{
-    /* display:grid;
-    grid-template-columns: repeat(2, minmax(min(100%, 78px), 1fr)); */
+#cont-filtros-url {
+    gap: 10px;
+
+    @include responsive($breakpoints, sm) {
+        display: grid;
+        grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
+        justify-content: space-evenly;
+    }
+
+    @include responsive($breakpoints, md, lg) {
+        display: grid;
+        grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
+        justify-content: space-evenly;
+        gap: 20px;
+    }
 }
 
 .btns {
-
     gap: 20px;
     display: flex;
     justify-content: center;
@@ -172,9 +206,9 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
 
 /* Que los botones del formulario tengan el mismo ancho */
 
-#conten-img-form{
-    width:80%;
-    display:flex;
+#conten-img-form {
+    width: 80%;
+    display: flex;
     justify-content: center;
 }
 
@@ -185,9 +219,13 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
     height: 120px;
     border-radius: 20px;
     border: 2px solid rgba(62, 61, 61, 0.393);
+    @include responsive($breakpoints, sm) {
+        height: 150px;
+        margin-top:15px;
+    }
 }
 
-#imag{
+#imag {
     max-width: 100%;
     object-fit: cover;
 }
@@ -195,4 +233,3 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
 #img-form:hover {
     box-shadow: 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
-    
