@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="https://kit.fontawesome.com/a71ade6c0e.js" crossorigin="anonymous"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
@@ -175,7 +176,7 @@
                                 <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <div id="conten-img-form" class="hidden">
+                        <div id="conten-img-form">
                             <div id="img-form">
                                 <img id="imag" src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
                             </div>
@@ -195,14 +196,30 @@
                             <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                         </div>
                         <p><span class="spanFilForm">*</span>Información requerida</p>
+                        <label for="idTarj"></label>
+                        <input  id="idTarj" name="idTarj"  type="text">
                     </div>
+
+                    
+                    <!-- <div class="contieneError" id="contieneError">
+                        <div class="delete-container" id="delete-container">
+                            <div class="delete-warning">
+                                <h3>Error</h3>
+                                <p>Please fill every field! </p>
+                        
+                                <div class="btn-container">
+                                    <button class="btn-success" id="close-alert">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </form>
-                <div id="contBtnsNuevaTarj" class="btns hidden">
+                <div id="contBtnsNuevaTarj" class="btns">
                     <button id="btn-canc-post" class="btn btn-form" value="Cancelar" tabindex="0">Cancelar</button>
                     <button id="btn-submit-post" class="btn btn-form" type="submit" value="Enviar"
                         tabindex="0">Enviar</button>
                 </div>
-                <div id="contBtnsEditTarj" class="btns hidden">
+                <div id="contBtnsEditTarj" class="btns">
                     <button id="btn-canc-put" class="btn btn-form" value="Cancelar" tabindex="0">Cancelar</button>
                     <button id="btn-submit-put" class="btn btn-form" type="submit" value="Grabar"
                         tabindex="0">Enviar</button>
@@ -255,6 +272,7 @@
     <script src="./app-style.js"></script>
     <script src="./app-get.js"></script>
     <script src="./app-post.js"></script>
+    <script src="./app-put.js"></script>
 </body>
 
 </html>
