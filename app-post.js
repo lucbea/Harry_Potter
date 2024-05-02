@@ -12,7 +12,6 @@ $btnNuevaTarj.addEventListener("click", () => {
 });
 
 
-// Evento que activa todo el proceso POST
 
 $btnSubmitPost.addEventListener("click", (event) => {
         event.preventDefault();
