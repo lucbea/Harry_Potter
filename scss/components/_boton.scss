@@ -14,8 +14,17 @@ button:focus {
     box-shadow: 2px 3px 6px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
  }
 
+.btn-mas {
+    background-color: #4e514fa8;
+    border: 1px solid rgba(255, 255, 255, 0.775)
+    // box-shadow: 2px 3px 6px 0px rgb(247, 245, 245), 0 3px 1px -2px rgba(252, 251, 251, 0.12), 0 1px 5px 0 rgb(255, 254, 254);
+}
  .btn-form{
     width: 63px;
+ }
+
+ #contBtnsNuevTar, #contBtnsEditTar {
+    display:flex;
  }
  
 .btn:hover {
@@ -28,3 +37,42 @@ button:focus {
     transform: scale(1.15);
     /* font-weight: 800; */
 }
+
+.btn-mas:hover, .btn-mas:focus {
+    box-shadow: 2px 3px 6px 0px rgb(247, 245, 245), 0 3px 1px -2px rgba(252, 251, 251, 0.12), 0 1px 5px 0 rgb(255, 254, 254);
+}
+
+.btn-home{
+    // position:absolute;
+    top:5px;
+    left: 5px;
+    padding:0px;
+}
+
+.btns-una-tarj {
+    display:flex;
+    justify-content: center;
+    gap:20px;
+    margin:20px;
+    
+} 
+
+.btn-una{
+    height:18px;
+    margin-block:0px;
+    @include responsive($breakpoints, msm) {  
+        height:25px;
+        width:50px;
+    }
+}
+.icono{
+    // width: 14px;
+    height: 14px;
+    padding:0px;
+    width:auto;
+    @include responsive($breakpoints, msm){
+        height: 16px;
+    }
+}
+
+

@@ -52,17 +52,102 @@ input, select {
   --altoPantalla: 200;
 }
 
+#fondo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 60;
+}
+
+#modal {
+  height: 100%;
+  width: 100%;
+  min-width: 264px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contieneError {
+  position: relative;
+  font-family: Arial, sans-serif;
+  height: 30%;
+  width: 80%;
+  background: rgb(233, 217, 217);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  margin-inline: 10px;
+  margin-block: 10px;
+  border: 2px solid white;
+  border-radius: 7px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contieneError h3 {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 13px;
+}
+
+.contieneError p {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+/*Boton de cerrar ventana modal*/
+#cerrar {
+  background: #acafa2;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 7px;
+  border: 1px solid white;
+  box-shadow: 0px 0px 0px 0px #5d5469;
+  outline: 0;
+  margin: 3px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+#cerrar:hover {
+  background-color: #212021;
+  color: #d6cece;
+}
+
 main {
   margin-top: 80px;
   padding-inline: 10px;
 }
 
 section {
-  margin-block: 20px;
+  margin-block: 10px;
 }
 
 #titulo {
-  margin: 5px 5px auto 5%;
+  margin: 0px 5px auto 5%;
 }
 
 #btn-nueva-tarj {
@@ -98,7 +183,7 @@ section {
 }
 
 .ing-dat {
-  margin-block: 16px;
+  margin-block: 7px;
 }
 
 #contenedor-filtros {
@@ -131,15 +216,6 @@ input {
   margin: auto;
 }
 
-.btns {
-  margin-top: 20px;
-}
-
-footer {
-  margin-top: 15px;
-  padding-block: 20px;
-}
-
 .cont-iconos-footer {
   margin-block: 10px;
 }
@@ -166,8 +242,17 @@ button:focus {
   box-shadow: 2px 3px 6px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
 }
 
+.btn-mas {
+  background-color: rgba(78, 81, 79, 0.6588235294);
+  border: 1px solid rgba(255, 255, 255, 0.775);
+}
+
 .btn-form {
   width: 63px;
+}
+
+#contBtnsNuevTar, #contBtnsEditTar {
+  display: flex;
 }
 
 .btn:hover {
@@ -181,6 +266,45 @@ button:focus {
   /* font-weight: 800; */
 }
 
+.btn-mas:hover, .btn-mas:focus {
+  box-shadow: 2px 3px 6px 0px rgb(247, 245, 245), 0 3px 1px -2px rgba(252, 251, 251, 0.12), 0 1px 5px 0 rgb(255, 254, 254);
+}
+
+.btn-home {
+  top: 5px;
+  left: 5px;
+  padding: 0px;
+}
+
+.btns-una-tarj {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.btn-una {
+  height: 18px;
+  margin-block: 0px;
+}
+@media screen and (min-width: 550px) {
+  .btn-una {
+    height: 25px;
+    width: 50px;
+  }
+}
+
+.icono {
+  height: 14px;
+  padding: 0px;
+  width: auto;
+}
+@media screen and (min-width: 550px) {
+  .icono {
+    height: 16px;
+  }
+}
+
 .cont-filtros-vs {
   display: flex;
   justify-content: center;
@@ -188,30 +312,29 @@ button:focus {
   background-color: #f2f2f2;
   width: 100%;
   z-index: 10;
-  top: 90px;
+  top: 80px;
   left: 0;
   height: 110px;
-  /* padding-bottom: 10px; */
 }
 @media screen and (min-width: 500px) {
   .cont-filtros-vs {
     position: fixed;
-    padding-bottom: 10px;
-    height: 90px;
+    /* padding-bottom: 10px; */
+    height: 70px;
   }
 }
 @media screen and (min-width: 970px) {
   .cont-filtros-vs {
     position: fixed;
-    padding-bottom: 10px;
-    height: 90px;
+    /* padding-bottom: 10px; */
+    height: 70px;
   }
 }
 @media screen and (min-width: 1310px) {
   .cont-filtros-vs {
     position: fixed;
-    padding-bottom: 10px;
-    height: 90px;
+    /* padding-bottom: 10px; */
+    height: 70px;
   }
 }
 
@@ -329,13 +452,28 @@ select {
   background-color: #ffffff;
   border: 1px solid #bdc0c2;
   align-items: center;
+  position: relative;
+  /* Para ocultar la flecha predeterminada */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding-right: 20px;
 }
 
-.select {
-  /* overflow: hidden; */
-  /* background: #fff url("./icono/flecha_select.png") no-repeat 90% center; */
+select::after {
+  content: "▼";
+  /* Código del símbolo de flecha hacia abajo */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Para que el símbolo no sea seleccionable */
 }
 
+/* overflow: hidden; */
+/* background: #fff url("./icono/flecha_select.png") no-repeat 90% center; */
 select:focus {
   border: 1px solid rgba(0, 0, 0, 0.486);
   box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
@@ -389,7 +527,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 50;
   width: 100%;
 }
 
@@ -398,7 +536,7 @@ nav {
 }
 
 .encabezado {
-  height: auto;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -424,39 +562,32 @@ nav {
   box-shadow: 0px 0px 10px #a3a37a;
 }
 
-#tarjetas {
+#cont-tarj {
   min-width: 250px;
   padding-inline: 3%;
 }
 @media screen and (min-width: 500px) {
-  #tarjetas {
+  #cont-tarj {
     margin-inline: 40px;
-    margin-top: 120px;
+    margin-top: 90px;
     padding-inline: 0px;
   }
 }
 @media screen and (min-width: 970px) {
-  #tarjetas {
+  #cont-tarj {
     margin-inline: 70px;
-    margin-top: 120px;
+    margin-top: 90px;
     padding-inline: 0px;
   }
 }
 @media screen and (min-width: 1310px) {
-  #tarjetas {
+  #cont-tarj {
     margin-inline: 13%;
-    margin-top: 120px;
+    margin-top: 90px;
     padding-inline: 0px;
   }
 }
 
-#content-tarjetas {
-  /* margin-inline: 20px;
-
-  /* en fomato responsive myor  margin-inline:60px; */
-}
-
-/* estilo del contenedor de TODOS los personajes que muestra */
 #total {
   display: grid;
   row-gap: 30px;
@@ -516,7 +647,7 @@ nav {
 
 img {
   overflow: hidden;
-  /* background-size: contain; */
+  object-fit: cover;
   transition: transform 0.7s ease, mrgin-top 0.7s easy;
 }
 
@@ -575,15 +706,143 @@ p {
   font-family: "Della Respira";
 }
 
-.form-tarj,
+#cont-total-una-tarj {
+  margin: auto;
+}
+#cont-una-tarj {
+  margin-inline: 10px;
+  margin-block: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px 0px #453e3e;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
+}
+@media screen and (min-width: 500px) {
+  #cont-una-tarj {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    height: 320px;
+  }
+}
+
+#imagen-una {
+  object-fit: cover;
+  position: relative;
+  border-radius: 10px;
+}
+@media screen and (min-width: 500px) {
+  #imagen-una {
+    width: 80%;
+    height: auto;
+    display: block;
+  }
+}
+#img-una {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 500px) {
+  #img-una {
+    transform: translateX(-40%);
+  }
+}
+
+#datos-una {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  z-index: 49;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(240, 233, 233, 0.648);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: grid;
+  gap: 3px;
+  grid-template-rows: repeat(3, minmax(min(20%, 18px), 60%));
+}
+@media screen and (min-width: 500px) {
+  #datos-una {
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+    width: 50%;
+    height: 100%;
+    padding: 25px;
+    background: linear-gradient(to right, rgb(242, 239, 239) 70%, rgba(255, 255, 255, 0));
+  }
+}
+
+#nomb-una {
+  color: black;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: "Della Respira";
+  text-shadow: 1px 1px 1px rgb(244, 235, 235);
+}
+
+.info-una {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Della Respira";
+}
+@media screen and (min-width: 500px) {
+  .info-una {
+    font-size: 16px;
+  }
+}
+
+.info-tres {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Della Respira";
+}
+@media screen and (min-width: 500px) {
+  .info-tres {
+    margin-top: 3px;
+  }
+}
+
+.info-dos {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Della Respira";
+}
+
 form {
   width: 100%;
 }
 
+#formulario {
+  max-width: 750px;
+  margin: auto;
+}
+@media screen and (min-width: 650px) {
+  #formulario {
+    padding-inline: 15px;
+    padding-block: 3px;
+    border: 1px solid rgba(29, 27, 27, 0.689);
+    border-radius: 10px;
+  }
+}
+@media screen and (min-width: 970px) {
+  #formulario {
+    padding-inline: 25px;
+  }
+}
+
 .ing-dat {
   min-width: 250px;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
 .ing-dat:focus {
@@ -595,16 +854,13 @@ label {
   font-size: 12px;
 }
 
-select option:checked {
-  background-color: rgba(101, 100, 96, 0.5843137255);
+.spanFilForm {
+  font-size: 8px;
 }
 
-/* select:hover option {
-    background-color: #2ec26e;
-}  */
 .filtros-vs select,
 input {
-  height: 30px;
+  height: 28px;
   font-family: "Della Respira", sans-serif;
   /* text-align:left; */
   font-size: 11px;
@@ -621,6 +877,7 @@ input {
 
 input {
   border-radius: 5px;
+  padding-right: 32px;
 }
 
 i {
@@ -651,8 +908,6 @@ select:focus .boton:focus {
 
 /* ingreso formulario */
 input:valid:focus {
-  /* border: 1px solid rgba(0, 0, 0, 0.486);
-  box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
   border: 1px solid rgba(0, 0, 0, 0.486);
   box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
 }
@@ -670,8 +925,6 @@ input:invalid:not(:placeholder-shown) {
 input:valid {
   border: 1px solid #7aa37c;
   box-shadow: 0px 0px 3px #7aa37c;
-  /* border: 1px solid rgba(0, 0, 0, 0.486);
-  box-shadow: inset 0px 0px 10px #369555, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
   border: 1px solid rgba(0, 0, 0, 0.486);
   box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
 }
@@ -687,15 +940,8 @@ input:valid {
 }
 
 input:valid ~ .icon-valido,
-textarea:valid ~ .icon-valido,
-input:not(:placeholder-shown):invalid ~ .icon-invalido,
-textarea:not(:placeholder-shown):invalid ~ .icon-invalido {
-  display: block;
-}
-
-input:valid ~ .icon-valido,
 input:not(:placeholder-shown):invalid ~ .icon-invalido {
-  display: block;
+  display: flex;
 }
 
 #formulario select {
@@ -720,8 +966,39 @@ input:not(:placeholder-shown):invalid ~ .icon-invalido {
 
 /* lo que viene es para ventana grande */
 #cont-filtros-url {
-  /* display:grid;
-  grid-template-columns: repeat(2, minmax(min(100%, 78px), 1fr)); */
+  gap: 10px;
+}
+@media screen and (min-width: 970px) {
+  #cont-filtros-url {
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1310px) {
+  #cont-filtros-url {
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .ocuparParteCont {
+    display: grid;
+    grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 970px) {
+  .ocuparParteCont {
+    display: grid;
+    grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 1310px) {
+  .ocuparParteCont {
+    display: grid;
+    grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
+    justify-content: space-evenly;
+  }
 }
 
 .btns {
@@ -745,6 +1022,12 @@ input:not(:placeholder-shown):invalid ~ .icon-invalido {
   border-radius: 20px;
   border: 2px solid rgba(62, 61, 61, 0.393);
 }
+@media screen and (min-width: 500px) {
+  #img-form {
+    height: 150px;
+    margin-top: 15px;
+  }
+}
 
 #imag {
   max-width: 100%;
@@ -760,15 +1043,13 @@ footer {
 }
 
 .pie {
-  /* font-weight: 20px; */
   color: rgb(219, 209, 209);
   background-color: black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   box-shadow: 0px 1px 7px 1px rgb(121, 121, 129), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
+  padding-block: 20px;
 }
-
 #titulo-pie {
   display: flex;
   flex-direction: column;
@@ -825,6 +1106,13 @@ footer p {
   font-weight: 600;
   color: white;
   font-family: "Della Respira";
+}
+
+.derechoAutor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .derechoAutor span {
