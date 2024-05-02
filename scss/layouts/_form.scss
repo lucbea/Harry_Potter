@@ -2,10 +2,10 @@ form {
     width: 100%;
 }
 
-.form-tarj {
+// .form-tarj {
     
     
-}
+// }
 #formulario{
     max-width:750px;
     margin:auto;
@@ -25,10 +25,12 @@ form {
     }
 }
 
+
+
 .ing-dat {
     min-width: 250px;
-    position: relative;
     width: 100%;
+    position: relative;
 }
 
 .ing-dat:focus {
@@ -39,19 +41,14 @@ label {
     font-family: "Della Respira", sans-serif;
     font-size: 12px;
 }
-
-
-
-
-
-
-select option:checked {
-    background-color: #65646095;
+.spanFilForm {
+    font-size: 8px;
 }
 
-/* select:hover option {
-    background-color: #2ec26e;
-}  */
+// select option:checked {
+    // background-color: #65646095;
+// }
+
 
 .filtros-vs select,
 input {
@@ -74,6 +71,7 @@ input {
 
 input {
     border-radius: 5px;
+    padding-right: 32px;
 }
 
 
@@ -106,10 +104,9 @@ select:focus .boton:focus {
 
 /* ingreso formulario */
 input:valid:focus {
-    /* border: 1px solid rgba(0, 0, 0, 0.486);
-    box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
     border: 1px solid rgba(0, 0, 0, 0.486);
     box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+    
 }
 
 input:invalid:not(:placeholder-shown):focus {
@@ -125,10 +122,6 @@ input:invalid:not(:placeholder-shown) {
 input:valid {
     border: 1px solid #7aa37c;
     box-shadow: 0px 0px 3px #7aa37c;
-
-
-    /* border: 1px solid rgba(0, 0, 0, 0.486);
-    box-shadow: inset 0px 0px 10px #369555, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
     border: 1px solid rgba(0, 0, 0, 0.486);
     box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
@@ -143,16 +136,18 @@ input:valid {
     transform: translateY(50%);
 }
 
-input:valid~.icon-valido,
-textarea:valid~.icon-valido,
-input:not(:placeholder-shown):invalid~.icon-invalido,
-textarea:not(:placeholder-shown):invalid~.icon-invalido {
-    display: block;
-}
+
+// textarea:valid~.icon-valido, textarea:not(:placeholder-shown):invalid~.icon-invalido,
+// input:valid~.icon-valido,
+// input:not(:placeholder-shown):invalid~.icon-invalido
+//  {
+//     display: block;
+// }
 
 input:valid~.icon-valido,
 input:not(:placeholder-shown):invalid~.icon-invalido {
-    display: block;
+    display: flex;
+    // background-color: #761921;
 }
 
 
@@ -182,17 +177,23 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
 #cont-filtros-url {
     gap: 10px;
 
-    @include responsive($breakpoints, sm) {
-        display: grid;
-        grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
-        justify-content: space-evenly;
-    }
+    // estoy viendo contenedor filtros
+    // @include responsive($breakpoints, sm, md, lg) {
+    //     display: grid;
+    //     grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
+    //     justify-content: space-evenly;
+    // }
 
     @include responsive($breakpoints, md, lg) {
+        gap: 20px;
+    }
+}
+
+.ocuparParteCont {
+    @include responsive($breakpoints, sm, md, lg) {
         display: grid;
         grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
         justify-content: space-evenly;
-        gap: 20px;
     }
 }
 
@@ -202,7 +203,7 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
     justify-content: center;
 }
 
-.btns .boton {}
+// .btns .boton {}
 
 /* Que los botones del formulario tengan el mismo ancho */
 
