@@ -6,7 +6,9 @@ const llamadoFetch = (id, todosUno, funcion) => {
     return fetch("https://661c5d0de7b95ad7fa6a3986.mockapi.io/api/harryPotter/" + id)
         .then((res) => res.json())
         .then((data) => {
+            console.log("llamado fetch", data);
             if (funcion === "mostrar") {
+                console.log("voy a mostar algo")
                 todosUno? mostrarTodasTarj(data) : mostrarUnaTarj (data);
             } else {
                 console.log("voy a editar tarjeta")
@@ -16,6 +18,7 @@ const llamadoFetch = (id, todosUno, funcion) => {
 
 
 const mostrarUnaTarj = (pers) => {
+    console.log("voy a mostrar una tarj")
     ocultarCont();
     enlableSpinner.style.display = 'block'
     setTimeout(() => {
@@ -72,6 +75,7 @@ const mostrarUnaTarj = (pers) => {
         evenBorrarUna (btnsBorrarUna, "idBtnBorrarUna");
     }, 200);
     per = pers;
+    console.log(pers, "per: ", per, "****")
     document.body.scrollIntoView({block: 'start' });
 }
 
@@ -90,8 +94,12 @@ const evenVolverInicio = (btns) => {
 
 // **************** Editar una Tarjeta ******************
 const evenEditUna = (btns, paramData) => {
+    console.log(per, "estoy en editar una",btns,paramData);
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
+            // console.log(per);
+            // mostrarCont($formTarj);
+            // let perso = llamadoFetch(btn.getAttribute(`data-${paramData}`), false, "editar");
             formMostData(per);       //muestra el formulario con los datos HACER
         } );
     });
@@ -149,6 +157,7 @@ const mostrarTodasTarj = (personajes) => {
 
 
 const evenMostrarPers = (btns, paramData) => {
+    console.log("estoy en evenMostrarPers, con el paramData:",paramData)
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             llamadoFetch(btn.getAttribute(`data-${paramData}`), false, "mostrar") 

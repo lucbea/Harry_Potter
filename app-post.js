@@ -1,5 +1,6 @@
-// **************** Evento Nueva Tarjeta ******************
+// Evento Nueva Tarjeta 
 $btnNuevaTarj.addEventListener("click", () => {
+    console.log("voy a mostrar formulario")
     mostrarCont($formTarj);
     $contBtnsEditTarj.classList.add("hidden");
     $contBtnsNuevaTarj.classList.remove("hidden");
@@ -12,9 +13,10 @@ $btnNuevaTarj.addEventListener("click", () => {
 });
 
 
-
+// Evento que activa todo el proceso POST
 $btnSubmitPost.addEventListener("click", (event) => {
         event.preventDefault();
+        console.log("El botón fue clickeado");
         let pers = armarObjNuevoPers(event);
         if (pers) { 
             postFetch(event, pers);
@@ -28,6 +30,7 @@ $btnSubmitPost.addEventListener("click", (event) => {
 
 const postFetch = (event, nuevoPers) => {
     event.preventDefault();
+    console.log("Ingresé a Post", nuevoPers);
     fetch("https://661c5d0de7b95ad7fa6a3986.mockapi.io/api/harryPotter/", {
         method: "POST",
         headers: { "Content-Type": "application/json" }, 
@@ -41,6 +44,7 @@ const postFetch = (event, nuevoPers) => {
         })
         .then((data) => {
             llamadoFetch("", true, "mostrar");
+            console.log(data); 
         })
         .catch((error) => console.log(error))
         .finally(() => console.log("Terminé POST"));
@@ -50,6 +54,7 @@ const postFetch = (event, nuevoPers) => {
 const armarObjNuevoPers = (event) => {
     event.preventDefault();
     let band = false;
+    console.log("band:", band);
     band = validarForm(band);
 
     if (band) {
@@ -69,6 +74,7 @@ const armarObjNuevoPers = (event) => {
             "origen": origen,
             "estado": estado
         };
+        console.log(pers);
         return pers
 
     } else {
@@ -79,15 +85,17 @@ const armarObjNuevoPers = (event) => {
 
 const validarForm = (band) => {
     if ($inpNombForm.value === '' || $inpUrlForm.value === '' || $inpInfoRelForm.value === '' || $inpMasTextForm.value === '') {
+        console.log("formulario con VACÍOS")
         $fondoModal.classList.remove("hidden");
         return band
     } else {
+        console.log("formulario OK")
         return band = true;
     }
 }
 
 
-// **************** Evento Cancelar nueva Tarjeta ******************
+//Evento Cancelar nueva Tarjeta 
 $btnCancPost.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCont($contTarj, $contFiltrosVs);

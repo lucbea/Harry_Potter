@@ -43,3 +43,18 @@ const $contFiltrosUrl = document.getElementById("cont-filtros-url");
 const $contBtnsNuevaTarj = document.getElementById("contBtnsNuevaTarj");
 const $contBtnsEditTarj = document.getElementById("contBtnsEditTarj");
 
+// let $prueba = document.getElementById("prueba")
+// let $inpInfoRelForm2 =document.getElementById("inp-info-rel-2")
+
+//app-put
+const $btnEditUna = document.getElementById("btn-edit-una");
+const $btnCancPut = document.getElementById("btn-canc-put");
+const $btnSubmitPut = document.getElementById("btn-submit-put");
+const $imagURL = document.getElementById("imagURL");
+const $classSpanFilForm = document.querySelectorAll(".spanFilForm");
+const $classIco = document.querySelectorAll(".ico");
+
+
+
+// Para probar IdleDeadline, luego borrar
+let $idTarj = document.getElementById("idTarj");

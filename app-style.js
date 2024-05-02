@@ -23,16 +23,21 @@ lugarFooter();
 
 const elemOculMost = [$formTarj,  $contFiltrosVs, $contTarj, $contTotalUnaTarj];
 
+const ocultarCont = () => {
+  for (let i = 0; i < elemOculMost.length; i++) {
+    elemOculMost[i].classList.add("hidden");
+    console.log(elemOculMost[i])
+  }
+}
 
-// **************** Evento Borrar Filtros ******************
+// Evento Borrar Filtros 
 $btnCancelBusc.addEventListener("click", () => borrarFiltros());
 
 
-//  ***** Función ocultar todos los contenedores y mostrar los necesarios
 const borrarFiltros = () => {
-  $selFiltroCasa.value = "toda";
-  $selFiltroEspecie.value = "toda";
-  $selFiltroEstado.value = "todo";
+  $selFiltroCasa.value = "Todas";
+  $selFiltroOrigen.value = "Todos";
+  $selFiltroEstado.value = "Todos";
 }
 
 
@@ -45,12 +50,6 @@ const mostrarCont = (...elementos) => {
   lugarFooter();
 }
 
-
-const ocultarCont = () => {
-  for (let i = 0; i < elemOculMost.length; i++) {
-    elemOculMost[i].classList.add("hidden");
-  }
-}
 
 //  Cerrar ventana modal
 $cerrar.addEventListener("click", () => {
