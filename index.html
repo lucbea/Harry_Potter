@@ -83,11 +83,11 @@
 
                     </div>
                     <div id="btns-accion-filtros">
-                        <button type="button" id="btn-busc" class="btn">
+                        <button type="button" id="btn-busc" class="btn btnFiltro">
                             <p>Buscar</p>
                         </button>
-                        <button type="button" id="btn-cancel-busc" class="btn">
-                            <p>Borrar</p>
+                        <button type="button" id="btn-cancel-busc" class="btn btnFiltro">
+                            <p>Restaurar</p>
                         </button>
                     </div>
                 </div>
@@ -114,6 +114,7 @@
             <div id="form-tarj" class="form-tarj">
                 <form id="formulario" action="./index.html">
                     <div id="cont-filtros-url">
+                        <div id="datImg" class="ocuparParteCont">
                         <div>
                             <div class="ing-dat">
                                 <label for="nombreForm">Nombre <span class="spanFilForm">*</span></label>
@@ -125,15 +126,14 @@
                             <div id="contenedor-filtros">
                                 <div class="ing-dat conten-filtros" action="" method="post">
                                     <div class="filtro">
-                                        <label for="sel-cas-form">Casa <span
-                                                class="spanFilForm">*elegir</span></label>
+                                        <label for="sel-cas-form">Casa <span class="spanFilForm">*elegir</span></label>
                                         <div class="select">
                                             <select id="sel-cas-form">
                                                 <option value="Gryffindor">Gryffindor</option>
                                                 <<option value="Ravenclaw">Ravenclaw</option>
-                                                <option value="Slyherint">Slytherin</option>
-                                                <option value="Huflepufff">Hufflepuff</option>
-                                                <option value="Desconocida">Desconocida</option>
+                                                    <option value="Slyherint">Slytherin</option>
+                                                    <option value="Huflepufff">Hufflepuff</option>
+                                                    <option value="Desconocida">Desconocida</option>
                                             </select>
                                         </div>
                                         <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
@@ -155,7 +155,8 @@
                                         <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                                     </div>
                                     <div class="filtro">
-                                        <label for="sel-estado-form">Estado <span class="spanFilForm">* elegir</span></label>
+                                        <label for="sel-estado-form">Estado <span class="spanFilForm">*
+                                                elegir</span></label>
                                         <div class="select">
                                             <select id="sel-estado-form">
                                                 <option value="Vivo">Vivo</option>
@@ -176,10 +177,11 @@
                                 <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <div id="conten-img-form">
+                        <div id="conten-img-form" class="hidden">
                             <div id="img-form">
                                 <img id="imag" src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
                             </div>
+                        </div>
                         </div>
                         <div class="ing-dat">
                             <label for="infoRelForm">Información relevante <span class="spanFilForm">*</span></label>
@@ -196,23 +198,7 @@
                             <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                         </div>
                         <p><span class="spanFilForm">*</span>Información requerida</p>
-                        <label for="idTarj"></label>
-                        <input  id="idTarj" name="idTarj"  type="text">
                     </div>
-
-                    
-                    <!-- <div class="contieneError" id="contieneError">
-                        <div class="delete-container" id="delete-container">
-                            <div class="delete-warning">
-                                <h3>Error</h3>
-                                <p>Please fill every field! </p>
-                        
-                                <div class="btn-container">
-                                    <button class="btn-success" id="close-alert">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </form>
                 <div id="contBtnsNuevaTarj" class="btns">
                     <button id="btn-canc-post" class="btn btn-form" value="Cancelar" tabindex="0">Cancelar</button>
@@ -226,20 +212,31 @@
                 </div>
             </div>
         </section>
-        <div id="fondo-modal" class="hidden">
-            <div id="modal">
-                <div class="contieneError" id="contieneError">
-                    <button id="cerrar">x</button>
-                    <div>
-                        <h3>¡Cuidado!</h3>
-                        <p>Revise los datos ingresados.</p>
+        <section>
+            <div id="fondo-modal" class="hidden">
+                <div id="modal">
+                    <div class="contieneMens hidden" id="contErrorForm">
+                        <button id="cerrar" class="cerrar">x</button>
+                        <div>
+                            <h3>¡Cuidado!</h3>
+                            <p>Revise los datos ingresados.</p>
+                        </div>
+                    </div>
+                    <div class="contieneMens hidden" id="confBorrarTarj">
+                        <div>
+                            <h3>¡Cuidado!</h3>
+                            <p>Si continúa borrará este personaje.</p>
+                        </div>
+                        <div id="contBtnsEditTarj" class="btns">
+                            <button id="btn-canc-delete" class="btn btn-form-borr" value="Cancelar"
+                                tabindex="0">Cancelar</button>
+                            <button id="btn-submit-delete" class="btn btn-form-borr delete" type="submit" value="Grabar"
+                                tabindex="0">Borrar</button>
+                        </div>
                     </div>
                 </div>
-               
             </div>
-        </div>
-        </div>
-        </div>
+        </section>
     </main>
 
     <footer id="footer">
@@ -273,6 +270,7 @@
     <script src="./app-get.js"></script>
     <script src="./app-post.js"></script>
     <script src="./app-put.js"></script>
+    <script src="./app-delete.js"></script>
 </body>
 
 </html>

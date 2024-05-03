@@ -17,6 +17,10 @@ const $pie = document.getElementById("pie");
 
 const $fondoModal = document.getElementById("fondo-modal");
 const $cerrar = document.getElementById("cerrar");
+const $contErrorForm = document.getElementById("contErrorForm");
+const $confBorrarTarj = document.getElementById("confBorrarTarj");
+const $btnCancDelete = document.getElementById("btn-canc-delete");
+const $btnSubmitDelete = document.getElementById("btn-submit-delete");
 
 //app-get
 const $contentTarjetas = document.getElementById("content-tarjetas");
@@ -43,8 +47,6 @@ const $contFiltrosUrl = document.getElementById("cont-filtros-url");
 const $contBtnsNuevaTarj = document.getElementById("contBtnsNuevaTarj");
 const $contBtnsEditTarj = document.getElementById("contBtnsEditTarj");
 
-// let $prueba = document.getElementById("prueba")
-// let $inpInfoRelForm2 =document.getElementById("inp-info-rel-2")
 
 //app-put
 const $btnEditUna = document.getElementById("btn-edit-una");
@@ -55,6 +57,3 @@ const $classSpanFilForm = document.querySelectorAll(".spanFilForm");
 const $classIco = document.querySelectorAll(".ico");
 
 
-
-// Para probar IdleDeadline, luego borrar
-let $idTarj = document.getElementById("idTarj");
