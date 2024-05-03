@@ -23,6 +23,10 @@ button:focus {
     width: 63px;
  }
 
+ .btnFiltro{
+    width:48px;
+ }
+
  #contBtnsNuevTar, #contBtnsEditTar {
     display:flex;
  }
@@ -75,4 +79,11 @@ button:focus {
     }
 }
 
+.btn-form-borr{
+    font-size:14px;
+    width:60px;
+}
+ .delete {
+    border: 1.5px solid red;
+ }
 

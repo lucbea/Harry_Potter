@@ -75,7 +75,7 @@ input, select {
   align-items: center;
 }
 
-#contieneError {
+.contieneMens {
   position: relative;
   font-family: Arial, sans-serif;
   height: 30%;
@@ -93,23 +93,24 @@ input, select {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.contieneError h3 {
+.contieneMens h3 {
   color: black;
   font-size: 20px;
   text-align: center;
   margin-top: 13px;
 }
 
-.contieneError p {
+.contieneMens p {
   color: black;
   font-size: 18px;
   text-align: center;
 }
 
 /*Boton de cerrar ventana modal*/
-#cerrar {
+.cerrar {
   background: #acafa2;
   color: #FFFFFF;
   line-height: 25px;
@@ -132,7 +133,7 @@ input, select {
   font-size: 15px;
 }
 
-#cerrar:hover {
+.cerrar:hover {
   background-color: #212021;
   color: #d6cece;
 }
@@ -251,6 +252,10 @@ button:focus {
   width: 63px;
 }
 
+.btnFiltro {
+  width: 48px;
+}
+
 #contBtnsNuevTar, #contBtnsEditTar {
   display: flex;
 }
@@ -305,6 +310,15 @@ button:focus {
   }
 }
 
+.btn-form-borr {
+  font-size: 14px;
+  width: 60px;
+}
+
+.delete {
+  border: 1.5px solid red;
+}
+
 .cont-filtros-vs {
   display: flex;
   justify-content: center;
@@ -343,7 +357,7 @@ button:focus {
   gap: 10px;
   align-items: flex-end;
   margin-bottom: 3px;
-  width: 80%;
+  width: 90%;
 }
 @media screen and (min-width: 500px) {
   .filtros-vs {

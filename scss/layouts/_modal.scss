@@ -22,7 +22,7 @@
 }
 
 
-#contieneError {
+.contieneMens {
         position: relative; 
         font-family: Arial, sans-serif;
         height: 30%;
@@ -40,16 +40,17 @@
         display:flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 }
 
-.contieneError h3{
+.contieneMens h3{
     color:black;
     font-size: 20px;
     text-align: center;
     margin-top: 13px;
 }
 
-.contieneError p{
+.contieneMens p{
     color:black;
     font-size: 18px;
     text-align: center;
@@ -57,7 +58,7 @@
 
 
 /*Boton de cerrar ventana modal*/
-#cerrar {
+.cerrar {
     background: #acafa2;
     color: #FFFFFF;
     line-height: 25px;
@@ -80,7 +81,7 @@
     font-size: 15px;
 }
 
-#cerrar:hover {
+.cerrar:hover {
     background-color: #212021;
     color: #d6cece;
 }

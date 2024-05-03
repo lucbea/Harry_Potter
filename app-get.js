@@ -110,7 +110,9 @@ const evenEditUna = (btns, paramData) => {
 // **************** Borrar una Tarjeta ******************
 const evenBorrarUna = (btns, paramData) => {
     btns.forEach((btn) => {
-        btn.addEventListener("click", (e) => mostrarCont($contTarj, $contFiltrosVs));
+        btn.addEventListener("click", (e) => {
+            console.log(per,paramData, btn)
+            borrarUnaTarj(e, per, paramData)});
     });
 }
 

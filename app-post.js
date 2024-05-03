@@ -2,6 +2,7 @@
 $btnNuevaTarj.addEventListener("click", () => {
     console.log("voy a mostrar formulario")
     mostrarCont($formTarj);
+    $imgForm.classList.add ("hidden");
     $contBtnsEditTarj.classList.add("hidden");
     $contBtnsNuevaTarj.classList.remove("hidden");
     
@@ -87,6 +88,7 @@ const validarForm = (band) => {
     if ($inpNombForm.value === '' || $inpUrlForm.value === '' || $inpInfoRelForm.value === '' || $inpMasTextForm.value === '') {
         console.log("formulario con VACÍOS")
         $fondoModal.classList.remove("hidden");
+        $contErrorForm.classList.remove("hidden");
         return band
     } else {
         console.log("formulario OK")
@@ -98,6 +100,13 @@ const validarForm = (band) => {
 //Evento Cancelar nueva Tarjeta 
 $btnCancPost.addEventListener("click", (event) => {
     event.preventDefault();
-    mostrarCont($contTarj, $contFiltrosVs);
+    $imgForm.classList.add("hidden");
+    enlableSpinner.style.display = 'block'
+
+    setTimeout(() => {
+        enlableSpinner.style.display = 'none';
+        mostrarCont($contTarj, $contFiltrosVs);
+    }, 2000);
+    document.body.scrollIntoView({block: 'start' });
 });
 

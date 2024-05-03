@@ -16,8 +16,10 @@ const formMostData = (per) => {
     $selCasaForm.value = per.casa;
     $selOrigenForm.value = per.origen;
     $selEstadoForm.value = per.estado;
-    $selCasaForm.value = per.casa;
-    $idTarj.value = per.id;
+    $imgForm.innerHTML = "";
+    $imgForm.innerHTML +=
+                `<img id="imag" src="${per.imagenURL} " alt="imagen desde URL">` 
+ 
     document.body.scrollIntoView({ block: 'start' });
 }
 
@@ -109,5 +111,16 @@ const putFetch = (event, persModif) => {
         .finally(() => console.log("Terminé PUT"));
 };
 
+$btnCancPut.addEventListener("click", (event) => {
+    event.preventDefault();
+    $formTarj.classList.add("hidden");
+    enlableSpinner.style.display = 'block'
 
+    setTimeout(() => {
+        enlableSpinner.style.display = 'none';
+        mostrarCont($contTotalUnaTarj);
+    }, 2000);
+    document.body.scrollIntoView({block: 'start' });
+
+})
 
