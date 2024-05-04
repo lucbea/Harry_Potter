@@ -1,15 +1,15 @@
 let pers = [];
-let per= {};
-
+let per = {};
+let URLbase = "https://661c5d0de7b95ad7fa6a3986.mockapi.io/api/harryPotter/"
 
 const llamadoFetch = (id, todosUno, funcion) => {
-    return fetch("https://661c5d0de7b95ad7fa6a3986.mockapi.io/api/harryPotter/" + id)
+    return fetch( URLbase + id)
         .then((res) => res.json())
         .then((data) => {
             console.log("llamado fetch", data);
             if (funcion === "mostrar") {
                 console.log("voy a mostar algo")
-                todosUno? mostrarTodasTarj(data) : mostrarUnaTarj (data);
+                todosUno ? mostrarTodasTarj(data) : mostrarUnaTarj(data);
             } else {
                 console.log("voy a editar tarjeta")
             }
@@ -68,15 +68,15 @@ const mostrarUnaTarj = (pers) => {
                     </button>
                 </div>`
         const btnsHomeUna = document.querySelectorAll("#btn-home-una");
-        evenVolverInicio (btnsHomeUna);
+        evenVolverInicio(btnsHomeUna);
         const btnsEditUna = document.querySelectorAll('#btn-edit-una');
-        evenEditUna (btnsEditUna, "idBtnEditUna");
+        evenEditUna(btnsEditUna, "idBtnEditUna");
         const btnsBorrarUna = document.querySelectorAll('#btn-borrar-una');
-        evenBorrarUna (btnsBorrarUna, "idBtnBorrarUna");
+        evenBorrarUna(btnsBorrarUna, "idBtnBorrarUna");
     }, 200);
     per = pers;
     console.log(pers, "per: ", per, "****")
-    document.body.scrollIntoView({block: 'start' });
+    document.body.scrollIntoView({ block: 'start' });
 }
 
 
@@ -84,8 +84,8 @@ const mostrarUnaTarj = (pers) => {
 const evenVolverInicio = (btns) => {
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            ocultarCont ();
-            llamadoFetch ("", true, "mostrar");
+            ocultarCont();
+            llamadoFetch("", true, "mostrar");
             mostrarCont($contTarj, $contFiltrosVs);
 
         });
@@ -94,14 +94,14 @@ const evenVolverInicio = (btns) => {
 
 // **************** Editar una Tarjeta ******************
 const evenEditUna = (btns, paramData) => {
-    console.log(per, "estoy en editar una",btns,paramData);
+    console.log(per, "estoy en editar una", btns, paramData);
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             // console.log(per);
             // mostrarCont($formTarj);
             // let perso = llamadoFetch(btn.getAttribute(`data-${paramData}`), false, "editar");
             formMostData(per);       //muestra el formulario con los datos HACER
-        } );
+        });
     });
 }
 
@@ -111,8 +111,9 @@ const evenEditUna = (btns, paramData) => {
 const evenBorrarUna = (btns, paramData) => {
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            console.log(per,paramData, btn)
-            borrarUnaTarj(e, per, paramData)});
+            console.log(per, paramData, btn)
+            borrarUnaTarj(e, per, paramData)
+        });
     });
 }
 
@@ -126,9 +127,10 @@ const mostrarTodasTarj = (personajes) => {
         mostrarCont($contTarj, $contFiltrosVs);
         enlableSpinner.style.display = 'none';
         $total.innerHTML = '';
-        personajes.forEach(personaje => {
-            const { id, nombre, imagenURL, casa, origen, estado, infoRele, infoMas } = personaje;
-            $total.innerHTML += `<div id="contenidoPersonaje" class="centrado-personaje">
+        if (personajes) {
+            personajes.forEach(personaje => {
+                const { id, nombre, imagenURL, casa, origen, estado, infoRele, infoMas } = personaje;
+                $total.innerHTML += `<div id="contenidoPersonaje" class="centrado-personaje">
                                     <div id="imagen">
                                         <img src="${imagenURL}" alt="imagen">
                                     </div>
@@ -150,19 +152,27 @@ const mostrarTodasTarj = (personajes) => {
                                         </button>
                                     </div>
                             </div>`
-        });
-        const btnsMas = document.querySelectorAll('.btn-mas');
-        evenMostrarPers (btnsMas, "idboton");
+
+            });
+            const btnsMas = document.querySelectorAll('.btn-mas');
+            evenMostrarPers(btnsMas, "idboton");
+        } else {
+            // Si no hay personajes, puedes mostrar un mensaje o tomar otra acción aquí
+            // if (personajes.length < 1) {
+                console.log("No hay personajes para mostrar ***************");
+            }
+            
+        // }
     }, 2000);
-    document.body.scrollIntoView({block: 'start' });
+    document.body.scrollIntoView({ block: 'start' });
 };
 
 
 const evenMostrarPers = (btns, paramData) => {
-    console.log("estoy en evenMostrarPers, con el paramData:",paramData)
+    console.log("estoy en evenMostrarPers, con el paramData:", paramData)
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            llamadoFetch(btn.getAttribute(`data-${paramData}`), false, "mostrar") 
+            llamadoFetch(btn.getAttribute(`data-${paramData}`), false, "mostrar")
         });
     });
 }
@@ -170,4 +180,4 @@ const evenMostrarPers = (btns, paramData) => {
 
 const inicializar = () => llamadoFetch("", true, "mostrar");
 
-inicializar ();
+inicializar();

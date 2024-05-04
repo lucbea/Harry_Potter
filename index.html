@@ -47,37 +47,42 @@
                             <div class="select">
                                 <!-- <span>▼</span> -->
                                 <select name="filtro-casa" id="filtro-casa">
-                                    <option value="Todas" select>Todas</option>
+                                    <!-- <option value="" selected disabled hidden>Elegir</option> -->
+                                    <option value="Todas" selected>Todas</option>
                                     <option value="Gryffindor">Gryffindor</option>
                                     <option value="Ravenclaw">Ravenclaw</option>
-                                    <option value="Slyherint">Slytherin</option>
-                                    <option value="Huflepufff">Hufflepuff</option>
+                                    <option value="Slytherin">Slytherin</option>
+                                    <option value="Huflepuff">Hufflepuff</option>
                                     <option value="Desconocida">Desconocida</option>
                                 </select>
+                                <span>▼</span>
                             </div>
                         </div>
                         <div class="filtro">
                             <label for="filtro-origen">Origen</label>
                             <div class="select">
                                 <select id="filtro-origen">
+                                    <!-- <option value="" selected disabled hidden>Elegir</option> -->
                                     <option value="Todos" select>Todos</option>
                                     <option value="Muggle">Muggle</option>
                                     <option value="Mestizo">Mestizo</option>
                                     <option value="Sangre Pura">Sangre Pura</option>
-                                    <option value="Híbrido">Híbrido</option>
                                     <option value="Desconocido">Desconocido</option>
                                 </select>
+                                <span>▼</span>
                             </div>
                         </div>
                         <div class="filtro">
                             <label for="filtro-estado">Estado</label>
                             <div class="select">
                                 <select id="filtro-estado">
-                                    <option value="todo" select>Todos</option>
-                                    <option value="vivo">Vivo</option>
-                                    <option value="muer">Muerto</option>
-                                    <option value="desc">Desconocido</option>
+                                    <!-- <option value="" selected disabled hidden>Elegir</option> -->
+                                    <option value="Todos" select>Todos</option>
+                                    <option value="Vivo">Vivo</option>
+                                    <option value="Muerto">Muerto</option>
+                                    <option value="Desconocido">Desconocido</option>
                                 </select>
+                                <span>▼</span>
                             </div>
                         </div>
 
@@ -115,73 +120,74 @@
                 <form id="formulario" action="./index.html">
                     <div id="cont-filtros-url">
                         <div id="datImg" class="ocuparParteCont">
-                        <div>
-                            <div class="ing-dat">
-                                <label for="nombreForm">Nombre <span class="spanFilForm">*</span></label>
-                                <input tabindex="0" type="text" name="nombreForm" id="nombreForm"
-                                    placeholder="p. ej.: Pérez" required>
-                                <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
-                                <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
-                            </div>
-                            <div id="contenedor-filtros">
-                                <div class="ing-dat conten-filtros" action="" method="post">
-                                    <div class="filtro">
-                                        <label for="sel-cas-form">Casa <span class="spanFilForm">*elegir</span></label>
-                                        <div class="select">
-                                            <select id="sel-cas-form">
-                                                <option value="Gryffindor">Gryffindor</option>
-                                                <<option value="Ravenclaw">Ravenclaw</option>
-                                                    <option value="Slyherint">Slytherin</option>
-                                                    <option value="Huflepufff">Hufflepuff</option>
-                                                    <option value="Desconocida">Desconocida</option>
-                                            </select>
+                            <div>
+                                <div class="ing-dat">
+                                    <label for="nombreForm">Nombre <span class="spanFilForm">*</span></label>
+                                    <input tabindex="0" type="text" name="nombreForm" id="nombreForm"
+                                        placeholder="p. ej.: Pérez" required>
+                                    <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
+                                    <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
+                                </div>
+                                <div id="contenedor-filtros">
+                                    <div class="ing-dat conten-filtros" action="" method="post">
+                                        <div class="filtro">
+                                            <label for="sel-cas-form">Casa <span
+                                                    class="spanFilForm">*elegir</span></label>
+                                            <div class="select">
+                                                <select id="sel-cas-form">
+                                                    <option value="Gryffindor">Gryffindor</option>
+                                                    <<option value="Ravenclaw">Ravenclaw</option>
+                                                        <option value="Slytherin">Slytherin</option>
+                                                        <option value="Huflepufff">Hufflepuff</option>
+                                                        <option value="Desconocida">Desconocida</option>
+                                                </select>
+                                            </div>
+                                            <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
+                                            <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                                         </div>
-                                        <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
-                                        <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="filtro">
-                                        <label for="sel-origen-form">Origen <span
-                                                class="spanFilForm">*elegir</span></label>
-                                        <div class="select">
-                                            <select id="sel-origen-form">
-                                                <option value="Muggle">Muggle</option>
-                                                <option value="Mestizo">Mestizo</option>
-                                                <option value="Sangre Pura">Sangre Pura</option>
-                                                <option value="Híbrido">Híbrido</option>
-                                                <option value="Desconocido">Desconocido</option>
-                                            </select>
+                                        <div class="filtro">
+                                            <label for="sel-origen-form">Origen <span
+                                                    class="spanFilForm">*elegir</span></label>
+                                            <div class="select">
+                                                <select id="sel-origen-form">
+                                                    <option value="Muggle">Muggle</option>
+                                                    <option value="Mestizo">Mestizo</option>
+                                                    <option value="Sangre Pura">Sangre Pura</option>
+                                                    <option value="Híbrido">Híbrido</option>
+                                                    <option value="Desconocido">Desconocido</option>
+                                                </select>
+                                            </div>
+                                            <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
+                                            <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                                         </div>
-                                        <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
-                                        <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="filtro">
-                                        <label for="sel-estado-form">Estado <span class="spanFilForm">*
-                                                elegir</span></label>
-                                        <div class="select">
-                                            <select id="sel-estado-form">
-                                                <option value="Vivo">Vivo</option>
-                                                <option value="Muerto">Muerto</option>
-                                                <option value="Desconocido">Desconocido</option>
-                                            </select>
+                                        <div class="filtro">
+                                            <label for="sel-estado-form">Estado <span class="spanFilForm">*
+                                                    elegir</span></label>
+                                            <div class="select">
+                                                <select id="sel-estado-form">
+                                                    <option value="Vivo">Vivo</option>
+                                                    <option value="Muerto">Muerto</option>
+                                                    <option value="Desconocido">Desconocido</option>
+                                                </select>
+                                            </div>
+                                            <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
+                                            <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                                         </div>
-                                        <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
-                                        <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
                                     </div>
                                 </div>
+                                <div class="ing-dat">
+                                    <label for="urlForm">URL de la imagen <span class="spanFilForm">*</span></label>
+                                    <input tabindex="0" type="url" name="urlForm" id="urlForm"
+                                        placeholder="p. ej.: Pérez" required>
+                                    <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
+                                    <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <div class="ing-dat">
-                                <label for="urlForm">URL de la imagen <span class="spanFilForm">*</span></label>
-                                <input tabindex="0" type="url" name="urlForm" id="urlForm" placeholder="p. ej.: Pérez"
-                                    required>
-                                <i class="far fa-check-circle icon-valido ico" aria-hidden="true"></i>
-                                <i class="far fa-times-circle icon-invalido ico" aria-hidden="true"></i>
+                            <div id="conten-img-form" class="hidden">
+                                <div id="img-form">
+                                    <img id="imag" src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
+                                </div>
                             </div>
-                        </div>
-                        <div id="conten-img-form" class="hidden">
-                            <div id="img-form">
-                                <img id="imag" src="./img/quadro-poster-harry-potter-casa.jpg" alt="imagen">
-                            </div>
-                        </div>
                         </div>
                         <div class="ing-dat">
                             <label for="infoRelForm">Información relevante <span class="spanFilForm">*</span></label>
@@ -241,27 +247,21 @@
 
     <footer id="footer">
         <div id="pie" class="pie">
-            <!-- <div id="titulo-pie">
-            <h2>Trabajo Asincronismo</h2>
-            <h2>ADA</h2>
-        </div> -->
-            <div>
-                <div class="cont-iconos-footer hidden">
-                    <a class="icono-footer" href="https://github.com/lucbea" tabindex="0">
-                        <i class="fa-brands fa-github-alt icono-red-footer"></i>
-                    </a>
-                    <a class="icono-footer" href="https://www.linkedin.com/in/lucía-ferrer-49ba53189/" tabindex="0">
-                        <i class="fa-brands fa-linkedin-in icono-red-footer"></i>
-                    </a>
-                    <a class="icono-footer" href="mailto:ferrerlb@gmail.com" tabindex="0">
-                        <i class="fa-solid fa-envelope icono-red-footer"></i>
-                    </a>
+            <div class="derechoAutor">
+                <div>
+                    <p>Hecho con <span>❤️</span> por LucBea</p>
                 </div>
-                <div class="derechoAutor">
-                    <div>
-                        <p>Hecho con <span>❤️</span> por LucBea</p>
-                    </div>
-                </div>
+            </div>
+            <div id="cont-iconos-footer" class="cont-iconos-footer">
+                <a class="icono-footer" href="https://github.com/lucbea" tabindex="0">
+                    <i class="fa-brands fa-github-alt icono-red-footer"></i>
+                </a>
+                <a class="icono-footer" href="https://www.linkedin.com/in/lucía-ferrer-49ba53189/" tabindex="0">
+                    <i class="fa-brands fa-linkedin-in icono-red-footer"></i>
+                </a>
+                <a class="icono-footer" href="mailto:ferrerlb@gmail.com" tabindex="0">
+                    <i class="fa-solid fa-envelope icono-red-footer"></i>
+                </a>
             </div>
         </div>
     </footer>
@@ -271,6 +271,7 @@
     <script src="./app-post.js"></script>
     <script src="./app-put.js"></script>
     <script src="./app-delete.js"></script>
+    <script src="./app-filtrar.js"></script>
 </body>
 
 </html>

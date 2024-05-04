@@ -30,15 +30,7 @@ const ocultarCont = () => {
   }
 }
 
-// Evento Borrar Filtros 
-$btnCancelBusc.addEventListener("click", () => borrarFiltros());
 
-
-const borrarFiltros = () => {
-  $selFiltroCasa.value = "Todas";
-  $selFiltroOrigen.value = "Todos";
-  $selFiltroEstado.value = "Todos";
-}
 
 
 //  ***** Función ocultar todos los contenedores y mostrar los necesarios

@@ -8,9 +8,10 @@ const $contTotalUnaTarj = document.getElementById("cont-total-una-tarj");
 const $btnHomeUna = document.getElementById("btn-home-una");
 const $btnCancPost = document.getElementById("btn-canc-post");
 const $btnSubmitPost = document.getElementById("btn-submit-post");
+const $btnBusc = document.getElementById("btn-busc")
 const $btnCancelBusc = document.getElementById("btn-cancel-busc");
 let $selFiltroCasa = document.getElementById("filtro-casa");
-let $selFiltroEspecie = document.getElementById("filtro-especie");
+let $selFiltroOrigen = document.getElementById("filtro-origen");
 let $selFiltroEstado = document.getElementById("filtro-estado");
 const $footer = document.getElementById('footer');
 const $pie = document.getElementById("pie");
@@ -46,6 +47,7 @@ const $formulario = document.getElementById("formulario");
 const $contFiltrosUrl = document.getElementById("cont-filtros-url");
 const $contBtnsNuevaTarj = document.getElementById("contBtnsNuevaTarj");
 const $contBtnsEditTarj = document.getElementById("contBtnsEditTarj");
+const $datImg = document.getElementById("datImg");
 
 
 //app-put

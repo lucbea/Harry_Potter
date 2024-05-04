@@ -107,15 +107,12 @@ select {
 
 }
 
-select::after {
-    content: "\25BC";
-    /* Código del símbolo de flecha hacia abajo */
+.select span {
     position: absolute;
     top: 50%;
-    right: 10px;
     transform: translateY(-50%);
+    right: 10px; /* Ajusta la posición del span según sea necesario */
     pointer-events: none;
-    /* Para que el símbolo no sea seleccionable */
 }
 
 // .select {
@@ -147,4 +144,16 @@ select:hover {
     display: grid;
     column-gap: 5px;
     grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr));
+}
+.select{
+    position:relative;
+}
+
+.select span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px; /* Ajusta la posición del span según sea necesario */
+    pointer-events: none;
+    font-size: 8px;
 }
