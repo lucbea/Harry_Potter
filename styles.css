@@ -475,15 +475,12 @@ select {
   padding-right: 20px;
 }
 
-select::after {
-  content: "▼";
-  /* Código del símbolo de flecha hacia abajo */
+.select span {
   position: absolute;
   top: 50%;
-  right: 10px;
   transform: translateY(-50%);
+  right: 10px; /* Ajusta la posición del span según sea necesario */
   pointer-events: none;
-  /* Para que el símbolo no sea seleccionable */
 }
 
 /* overflow: hidden; */
@@ -511,6 +508,19 @@ select:hover {
   display: grid;
   column-gap: 5px;
   grid-template-columns: repeat(3, minmax(min(100%, 78px), 1fr));
+}
+
+.select {
+  position: relative;
+}
+
+.select span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; /* Ajusta la posición del span según sea necesario */
+  pointer-events: none;
+  font-size: 8px;
 }
 
 @property --angle {
@@ -1058,12 +1068,15 @@ footer {
 
 .pie {
   color: rgb(219, 209, 209);
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   box-shadow: 0px 1px 7px 1px rgb(121, 121, 129), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
   padding-block: 20px;
+  position: relative;
+  height: 57px;
 }
+
 #titulo-pie {
   display: flex;
   flex-direction: column;
@@ -1078,7 +1091,10 @@ a {
 }
 
 .cont-iconos-footer {
-  display: flex;
+  position: absolute;
+  top: -10px;
+  display: none;
+  z-index: 10;
   justify-content: center;
   align-items: center;
 }
@@ -1106,11 +1122,8 @@ a {
 }
 
 .icono-red-footer:hover {
-  /* background-color: #a3a37a; */
-  /* color: white; */
   color: #3d8a7c;
   border: 1px solid white;
-  /* text-shadow: 1px 1px 3px #424040; */
   border: 1px solid rgba(0, 0, 0, 0.486);
   box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
 }
@@ -1131,6 +1144,15 @@ footer p {
 
 .derechoAutor span {
   text-shadow: 0px 1px 4px #ffffff;
+}
+
+#pie:hover #cont-iconos-footer {
+  display: flex;
+  cursor: pointer;
+}
+
+#pie:hover .derechoAutor {
+  display: none;
 }
 
 body {

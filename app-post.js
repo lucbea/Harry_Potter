@@ -3,7 +3,10 @@ $btnNuevaTarj.addEventListener("click", () => {
     console.log("voy a mostrar formulario")
     mostrarCont($formTarj);
     $imgForm.classList.add ("hidden");
+    $datImg.classList.remove("ocuparParteCont");
+    
     $contBtnsEditTarj.classList.add("hidden");
+    $confBorrarTarj.classList.add("hidden");
     $contBtnsNuevaTarj.classList.remove("hidden");
     
     $inpNombForm.value = "";
@@ -23,7 +26,8 @@ $btnSubmitPost.addEventListener("click", (event) => {
             postFetch(event, pers);
             llamadoFetch("", true, "mostrar");
         } else {
-            errorCampoForm();
+            // errorCampoForm();
+            console.log("error en objeto para post");
         }
     });
     
@@ -79,7 +83,8 @@ const armarObjNuevoPers = (event) => {
         return pers
 
     } else {
-        errorCampoForm();
+        // errorCampoForm();
+        console.log("error en objeto para post");
     }
 };
 

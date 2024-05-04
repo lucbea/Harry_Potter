@@ -62,21 +62,22 @@ $btnSubmitPut.addEventListener("click", (event) => {
     band = validarForm(band);
 
     if (band) {
-        let pers = armarObjPut(event);
+        let pers = armarObjPut(inpPerChange);
         console.log("listo obj para put:", pers)
         if (pers) {
             console.log("antes del fetchPut", pers)
             putFetch(event, pers);
         }
     } else {
-        errorCampoForm();
+        // errorCampoForm();
+        console.log("error en objeto para post");
     }
 });
 
 
-const armarObjPut = () => {
-    eliminarVaciosObj(inpPerChange);
-    return inpPerChange;
+const armarObjPut = (objeto) => {
+    objeto = eliminarVaciosObj(objeto);
+    return objeto;
 }
 
 
@@ -86,6 +87,7 @@ const eliminarVaciosObj = (obj) => {
             delete obj[key];
         }
     });
+    return obj;
 };
 
 

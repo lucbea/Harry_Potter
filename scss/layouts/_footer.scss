@@ -4,20 +4,13 @@ footer {
 
  .pie {
     color: rgb(219, 209, 209);
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     display: flex;
-    // flex-direction: column;
-    // align-items: center;
     justify-content: center;
     box-shadow: 0px 1px 7px 1px rgb(121 121 129), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 2);
     padding-block:20px;
-    @include responsive($breakpoints, sm, xsm, md, lg, xl) { // revisar xl se agregó después
-        // justify-content: space-between;
-        // flex-direction: row;
-        // justify-content: space-between;
-        // padding-inline:10%;
-        // box-shadow: 0px 1px 7px 1px rgb(121, 121, 129), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgb(0, 0, 0);
-      }
+    position:relative;
+    height:57px;
 }
 
 #titulo-pie{
@@ -34,10 +27,14 @@ a {
 }
 
 .cont-iconos-footer {
-    display: flex;
+    position: absolute;
+    top: -10px;
+    display:none;
+    z-index: 10;
     justify-content: center;
     align-items: center;
 }
+
 .cont-iconos-footer a:focus {
     box-shadow: 0px 0px 10px #a3a37a;
     outline: 0;
@@ -61,11 +58,8 @@ a {
 }
 
 .icono-red-footer:hover {
-    /* background-color: #a3a37a; */
-    /* color: white; */
     color:#3d8a7c;
     border: 1px solid white;
-    /* text-shadow: 1px 1px 3px #424040; */
     border:1px solid rgba(0, 0, 0, 0.486);
     box-shadow:inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
@@ -85,4 +79,13 @@ footer p {
 }
 .derechoAutor span {
     text-shadow: 0px 1px 4px #ffffff;
+}
+
+#pie:hover  #cont-iconos-footer {
+    display: flex; 
+    cursor:pointer;
+}
+
+#pie:hover .derechoAutor {
+    display:none;
 }
