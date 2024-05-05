@@ -101,7 +101,7 @@ select {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 5px; /* Ajusta la posición del span según sea necesario */
+    right: 5px; 
     pointer-events: none;
 }
 
@@ -170,6 +170,9 @@ select:hover {
     position: relative;
     display: flex;
     justify-content: center;
+    @include responsive($breakpoints, sm, md, lg) {
+        margin-top:90px;
+    }
 }
 
 
