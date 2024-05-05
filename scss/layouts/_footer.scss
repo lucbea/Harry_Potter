@@ -2,34 +2,28 @@ footer {
     min-width: 270px;
 }
 
- .pie {
+
+.pie {
     color: rgb(219, 209, 209);
     background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     box-shadow: 0px 1px 7px 1px rgb(121 121 129), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 2);
-    padding-block:20px;
-    position:relative;
-    height:57px;
+    padding-block: 20px;
+    position: relative;
+    height: 57px;
 }
 
-#titulo-pie{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-    font-family: 'Della Respira';
-}
 
 a {
     text-decoration: none;
 }
 
+
 .cont-iconos-footer {
     position: absolute;
     top: -10px;
-    display:none;
+    display: none;
     z-index: 10;
     justify-content: center;
     align-items: center;
@@ -40,6 +34,7 @@ a {
     outline: 0;
     border-radius: 20px;
 }
+
 
 .icono-red-footer {
     position: relative;
@@ -57,35 +52,42 @@ a {
     box-shadow: 0px 0px 11px 2px #686853;
 }
 
+
 .icono-red-footer:hover {
-    color:#3d8a7c;
+    color: #3d8a7c;
     border: 1px solid white;
-    border:1px solid rgba(0, 0, 0, 0.486);
-    box-shadow:inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
+    border: 1px solid rgba(0, 0, 0, 0.486);
+    box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
+
 
 footer p {
     font-size: 12px;
     font-weight: 600;
     color: white;
-    font-family:'Della Respira';
+    font-family: 'Della Respira';
 }
 
+
 .derechoAutor {
-    width:100%;
-    display:flex;
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 .derechoAutor span {
     text-shadow: 0px 1px 4px #ffffff;
 }
 
-#pie:hover  #cont-iconos-footer {
-    display: flex; 
-    cursor:pointer;
+
+#pie:hover #cont-iconos-footer {
+    display: flex;
+    cursor: pointer;
 }
 
+
 #pie:hover .derechoAutor {
-    display:none;
+    display: none;
 }

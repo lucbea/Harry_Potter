@@ -18,15 +18,11 @@
     }
 }
 
-// #content-tarjetas {
-  
-// }
 
 #total {
     display: grid;
     row-gap: 30px;
     column-gap: 20px;
-    // grid-template-columns: repeat(auto-fill, minmax(min(33.33%, 230px), 1fr));
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     @include responsive($breakpoints, lg) {
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
@@ -36,36 +32,36 @@
     }
 }
 
-/* estilo del contenedor de personaje */
+
 #contenidoPersonaje {
     position: relative;
-    /* margin-block: 5px; */
-    /* margin-inline: auto; */
     overflow: hidden;
     height: 230px;
-    /* width: 100%; */
-    /* width: 100px; */
     border-radius: 10px;
     box-shadow: rgb(0 0 0) 0px 0px 4px 0px, rgb(0 0 0 / 12%) 0px 3px 1px -2px, rgb(0 0 0 / 20%) 0px 1px 5px 0px;
     transition: transform 0.7s ease;
     max-width:340x;
 }
 
+
 #contenidoPersonaje:hover {
     box-shadow: 0px 3px 9px 4px rgb(101 93 93), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
+
 
 #contenidoPersonaje:hover img {
     transform: scale(1.22);
 }
 
+
 #contenidoPersonaje:hover #datos {
     transform: translateY(-20px);
 }
+
+
 #contenidoPersonaje:hover .info-apar {
     display: flex;
 }
-
 
 
 #imagen {
@@ -74,8 +70,8 @@
     overflow: hidden;
     background-color: rgb(215, 215, 230);
     border-radius: 10px;
-    /* background-size: cover; */
 }
+
 
 img{
     overflow: hidden;
@@ -84,8 +80,6 @@ img{
 }
 
 
-
-/* estilos del contenedor que tiene datos principales del personaje */
 #datos {
     position: absolute;
     bottom: -10px;
@@ -100,24 +94,20 @@ img{
 }
 
 
-/* resalto del nombre del personaje */
 #nomb {
     color: white;
     font-size: 20px;
     font-weight: bold;
-    /* width:100%; */
-    /* color: black; */
     font-family: "cinzel";
     text-shadow: 1px 1px 1px black;
-    /* box-shadow: 2px 3px 6px 0px rgb(241, 238, 238); */
-    /* box-shadow: 2px 3px 6px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0); */
     transition: transform 0.3s ease;
 }
 
+
 p{
-    /* margin: 4px 0px;  */
     font-size: 11px;
 }
+
 
 .info{
     text-align: justify;
@@ -125,13 +115,13 @@ p{
     width:100%;
 }
 
+
 .info-apar {
     flex-direction: column;
     justify-content:justify;
 }
 
 
-/*Estilos del espacio del botón Más info */
 #mas {
     position:absolute;
     bottom:0px;

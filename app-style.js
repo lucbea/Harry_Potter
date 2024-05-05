@@ -1,5 +1,4 @@
 // Footer al final
-
 let altoPantalla;
 let anchoPantalla = window.innerWidth;
 const lugarFooter = () => {
@@ -21,21 +20,17 @@ window.addEventListener('resize', lugarFooter);
 lugarFooter();
 
 
-const elemOculMost = [$formTarj,  $contFiltrosVs, $contTarj, $contTotalUnaTarj];
+const elemOculMost = [$contErrorForm, $contTarj, $contTotalUnaTarj,   $contenImgForm, $contBtnsNuevaTarj, $contBtnsEditTarj, $contFiltrosVs, $confBorrarTarj, $datImg, $elijaFiltros, $fondoModal, $formTarj, $imgForm, $contMjeCambFilt, $mjeCambFilt];
+
 
 const ocultarCont = () => {
   for (let i = 0; i < elemOculMost.length; i++) {
     elemOculMost[i].classList.add("hidden");
-    console.log(elemOculMost[i])
   }
 }
 
 
-
-
-//  ***** Función ocultar todos los contenedores y mostrar los necesarios
 const mostrarCont = (...elementos) => {
-  ocultarCont();
   elementos.forEach(elem => {
     elem.classList.remove("hidden");
   });
@@ -43,7 +38,6 @@ const mostrarCont = (...elementos) => {
 }
 
 
-//  Cerrar ventana modal
 $cerrar.addEventListener("click", () => {
   $fondoModal.classList.add("hidden");
 })
