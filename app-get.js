@@ -6,49 +6,45 @@ const llamadoFetch = (id, todosUno, funcion) => {
     return fetch( URLbase + id)
         .then((res) => res.json())
         .then((data) => {
-            console.log("llamado fetch", data);
             if (funcion === "mostrar") {
-                console.log("voy a mostar algo")
-                todosUno ? mostrarTodasTarj(data) : mostrarUnaTarj(data);
-            } else {
-                console.log("voy a editar tarjeta")
-            }
+                todosUno ? mostrarTodasTarj(data) : mostrarUnaTarj(data, false);
+            } 
         });
 };
 
 
-const mostrarUnaTarj = (pers) => {
-    console.log("voy a mostrar una tarj")
+const mostrarUnaTarj = (pers, post) => {
     ocultarCont();
-    enlableSpinner.style.display = 'block'
+    contSpinner.style.display = 'flex';
     setTimeout(() => {
         mostrarCont($contTotalUnaTarj);
-        enlableSpinner.style.display = 'none';
+        $contSpinner.style.display = 'none';
         $contTotalUnaTarj.innerHTML = '';
         $contTotalUnaTarj.innerHTML += `
+        <div id="contTarjPost" class="hidden">
+                <h3>La información fue registrada</h3>
+            </div>
             <div id="cont-una-tarj">
-                    <!-- div id="contenidoPersonaje" class="centrado-personaje"> -->
-                    <!-- <div class="btn-home-inicio hidden">
-                        <button id="btn-home-una-inicio" class="btn btn-una" value="home" tabindex="0"> -->
-                    <!-- <span class="hidden"> <<< Volver</span> -->
-                    <!-- <img src="./icono/house-solid.png" class="icono" alt="inicio">
-                        </button>
-                    </div> -->
                     <div id="imagen-una">
                         <img id="img-una" src="${pers.imagenURL}" alt="imagen">
                     </div>
-                    <div id="datos-una">
-                        <div class="info-apar">
-                            <p id="nomb-una">${pers.nombre}</p>
-                            <p id="info-relevante-una" class="info-tres">${pers.infoRele}</p>
-                        </div>
-                        <div class="info-apar">
-                            <p class="info-una">Casa: ${pers.casa}</p>
-                            <p class="info-una">Origen: ${pers.origen}</p>
-                            <p id="estado-una" class="info-una">Estado: ${pers.estado}</p>
-                        </div>
-                        <div class="info-apar">
-                            <p id="mas-info-una" class="info-dos">${pers.infoMas}</p>
+                    <div>
+                        
+                        <div id="datos-una">
+                            <div class="info-apar"> 
+                                <div class="con-tit">
+                                </div>
+                                <p id="nomb-una">${pers.nombre}</p>
+                                <p id="info-relevante-una" class="info-tres">${pers.infoRele}</p>
+                            </div>
+                            <div class="info-apar">
+                                <p class="info-una">Casa: ${pers.casa}</p>
+                                <p class="info-una">Origen: ${pers.origen}</p>
+                                <p id="estado-una" class="info-una">Estado: ${pers.estado}</p>
+                            </div>
+                            <div class="info-apar">
+                                <p id="mas-info-una" class="info-dos">${pers.infoMas}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,59 +69,54 @@ const mostrarUnaTarj = (pers) => {
         evenEditUna(btnsEditUna, "idBtnEditUna");
         const btnsBorrarUna = document.querySelectorAll('#btn-borrar-una');
         evenBorrarUna(btnsBorrarUna, "idBtnBorrarUna");
-    }, 200);
+        if (post) {
+            const $contTarjPost = document.getElementById("contTarjPost");
+            $contTarjPost.classList.remove('hidden');
+            setTimeout(() => {
+                $contTarjPost.classList.add('hidden');
+            }, 3000);
+        }
+    }, 2000);
     per = pers;
-    console.log(pers, "per: ", per, "****")
     document.body.scrollIntoView({ block: 'start' });
 }
 
 
-// **************** Evento Ir al inicio desde una Tarjeta ******************
 const evenVolverInicio = (btns) => {
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             ocultarCont();
             llamadoFetch("", true, "mostrar");
             mostrarCont($contTarj, $contFiltrosVs);
-
         });
     });
 }
 
-// **************** Editar una Tarjeta ******************
+
 const evenEditUna = (btns, paramData) => {
-    console.log(per, "estoy en editar una", btns, paramData);
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            // console.log(per);
-            // mostrarCont($formTarj);
-            // let perso = llamadoFetch(btn.getAttribute(`data-${paramData}`), false, "editar");
-            formMostData(per);       //muestra el formulario con los datos HACER
+            formMostData(per);      
         });
     });
 }
 
 
-
-// **************** Borrar una Tarjeta ******************
 const evenBorrarUna = (btns, paramData) => {
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            console.log(per, paramData, btn)
-            borrarUnaTarj(e, per, paramData)
+            borrarUnaTarj(e, per, paramData);
         });
     });
 }
-
 
 
 const mostrarTodasTarj = (personajes) => {
     ocultarCont();
-    enlableSpinner.style.display = 'block'
-
+    $contSpinner.style.display = 'flex';
     setTimeout(() => {
         mostrarCont($contTarj, $contFiltrosVs);
-        enlableSpinner.style.display = 'none';
+        $contSpinner.style.display = 'none';
         $total.innerHTML = '';
         if (personajes) {
             personajes.forEach(personaje => {
@@ -152,24 +143,16 @@ const mostrarTodasTarj = (personajes) => {
                                         </button>
                                     </div>
                             </div>`
-
             });
             const btnsMas = document.querySelectorAll('.btn-mas');
             evenMostrarPers(btnsMas, "idboton");
-        } else {
-            // Si no hay personajes, puedes mostrar un mensaje o tomar otra acción aquí
-            // if (personajes.length < 1) {
-                console.log("No hay personajes para mostrar ***************");
-            }
-            
-        // }
+        } 
     }, 2000);
     document.body.scrollIntoView({ block: 'start' });
 };
 
 
 const evenMostrarPers = (btns, paramData) => {
-    console.log("estoy en evenMostrarPers, con el paramData:", paramData)
     btns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             llamadoFetch(btn.getAttribute(`data-${paramData}`), false, "mostrar")
@@ -178,6 +161,9 @@ const evenMostrarPers = (btns, paramData) => {
 }
 
 
-const inicializar = () => llamadoFetch("", true, "mostrar");
+const inicializar = () => {
+    llamadoFetch("", true, "mostrar");
+}  
+
 
 inicializar();

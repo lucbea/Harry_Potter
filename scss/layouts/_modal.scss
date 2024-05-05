@@ -1,11 +1,12 @@
 #fondo-modal {
     position: fixed;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 60;
 }
+
 
 #modal {
     height: 100%;
@@ -23,41 +24,43 @@
 
 
 .contieneMens {
-        position: relative; 
-        font-family: Arial, sans-serif;
-        height: 30%;
-        width: 80%;
-        background: rgb(233 217 217);
-        z-index: 99999;
-        -webkit-transition: opacity 400ms ease-in;
-        -moz-transition: opacity 400ms ease-in;
-        transition: opacity 400ms ease-in;
-        margin-inline: 10px;
-        margin-block: 10px;
-        border: 2px  solid white;
-        border-radius: 7px;
-        font-size: 28px;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    position: relative;
+    font-family: Arial, sans-serif;
+    height: 30%;
+    width: 80%;
+    background: rgb(233 217 217);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    margin-inline: 10px;
+    margin-block: 10px;
+    border: 2px solid white;
+    border-radius: 7px;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 400px;
 }
 
-.contieneMens h3{
-    color:black;
+
+.contieneMens h3 {
+    color: black;
     font-size: 20px;
     text-align: center;
     margin-top: 13px;
 }
 
-.contieneMens p{
-    color:black;
+
+.contieneMens p {
+    color: black;
     font-size: 18px;
     text-align: center;
 }
 
 
-/*Boton de cerrar ventana modal*/
 .cerrar {
     background: #acafa2;
     color: #FFFFFF;
@@ -80,6 +83,7 @@
     align-items: center;
     font-size: 15px;
 }
+
 
 .cerrar:hover {
     background-color: #212021;

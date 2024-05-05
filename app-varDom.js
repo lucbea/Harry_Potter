@@ -13,9 +13,11 @@ const $btnCancelBusc = document.getElementById("btn-cancel-busc");
 let $selFiltroCasa = document.getElementById("filtro-casa");
 let $selFiltroOrigen = document.getElementById("filtro-origen");
 let $selFiltroEstado = document.getElementById("filtro-estado");
+const $elijaFiltros= document.getElementById("elijaFiltros");
+const $contMjeCambFilt = document.getElementById("contMjeCambFilt");
+const $mjeCambFilt = document.getElementById("mjeCambFilt");
 const $footer = document.getElementById('footer');
 const $pie = document.getElementById("pie");
-
 const $fondoModal = document.getElementById("fondo-modal");
 const $cerrar = document.getElementById("cerrar");
 const $contErrorForm = document.getElementById("contErrorForm");
@@ -29,7 +31,8 @@ const $contUnaTarj = document.getElementById("cont-una-tarj");
 const $total = document.getElementById("total");
 
 //spinner
-const enlableSpinner = document.getElementById('render-spinner'); //revisar el spinner
+const $contSpinner = document.getElementById("contSpinner");
+const $spinner = document.getElementById('spinner'); 
 
 //app-post
 const $contieneError = document.getElementById("contieneError");
@@ -42,18 +45,17 @@ let $inpInfoRelForm = document.getElementById("infoRelForm");
 let $inpMasTextForm = document.getElementById("masTexForm");
 let $imgForm = document.getElementById("img-form");
 let $imag = document.getElementById("imag");
-
 const $formulario = document.getElementById("formulario");
 const $contFiltrosUrl = document.getElementById("cont-filtros-url");
 const $contBtnsNuevaTarj = document.getElementById("contBtnsNuevaTarj");
 const $contBtnsEditTarj = document.getElementById("contBtnsEditTarj");
 const $datImg = document.getElementById("datImg");
 
-
 //app-put
 const $btnEditUna = document.getElementById("btn-edit-una");
 const $btnCancPut = document.getElementById("btn-canc-put");
 const $btnSubmitPut = document.getElementById("btn-submit-put");
+const $contenImgForm = document.getElementById("conten-img-form");
 const $imagURL = document.getElementById("imagURL");
 const $classSpanFilForm = document.querySelectorAll(".spanFilForm");
 const $classIco = document.querySelectorAll(".ico");

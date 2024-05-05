@@ -4,16 +4,13 @@ $secu-color: #ca8db4;
 $secu-color-light: #825587;
 $main-color: #f7f7ff;
 
-$orientacion: portraid;
+// $orientacion: portraid;
 
-
-$altoPantalla: 500px; // Valor predeterminado
-
-// ./scss/utils/variables.scss
+$altoPantalla: 500px; 
 
 :root {
-    --orientation: portrait; // Valor predeterminado
-    --altoPantalla: 200; // Valor predeterminado
+    --orientation: portrait; 
+    --altoPantalla: 200; 
 }
 
   
