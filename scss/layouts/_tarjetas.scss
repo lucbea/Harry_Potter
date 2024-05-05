@@ -3,17 +3,14 @@
     padding-inline:3%;
     @include responsive($breakpoints, sm) {
         margin-inline: 40px;
-         margin-top: 90px;
          padding-inline:0px;
     }
     @include responsive($breakpoints, md) {
         margin-inline: 70px;
-        margin-top: 90px;
         padding-inline:0px;
     }
     @include responsive($breakpoints, lg) {
         margin-inline: 13%;
-         margin-top: 90px;
          padding-inline:0px;
     }
 }
