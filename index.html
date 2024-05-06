@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmnCShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script src="https://kit.fontawesome.com/a71ade6c0e.js" crossorigin="anonymous"></script> -->
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
@@ -56,8 +57,7 @@
                             <label for="filtro-origen">Origen</label>
                             <div class="select">
                                 <select id="filtro-origen">
-                                    <!-- <option value="" selected disabled hidden>Elegir</option> -->
-                                    <option value="Todos" select>Todos</option>
+                                    <option value="Todos" selected>Todos</option>
                                     <option value="Muggle">Muggle</option>
                                     <option value="Mestizo">Mestizo</option>
                                     <option value="Sangre Pura">Sangre Pura</option>
@@ -70,8 +70,7 @@
                             <label for="filtro-estado">Estado</label>
                             <div class="select">
                                 <select id="filtro-estado">
-                                    <!-- <option value="" selected disabled hidden>Elegir</option> -->
-                                    <option value="Todos" select>Todos</option>
+                                    <option value="Todos" selected>Todos</option>
                                     <option value="Vivo">Vivo</option>
                                     <option value="Muerto">Muerto</option>
                                     <option value="Desconocido">Desconocido</option>
@@ -90,7 +89,18 @@
                 </div>
             </div>
         </section>
-        <!-- *************************** Muestra todas las tarjetas ************************************* -->
+
+        <!-- ************** No hay tarjetas por los filtros *************** -->
+        <section>
+            <div id="contMjeCambFilt" class="hidden">
+                <div id="mjeCambFilt" class="contieneMens hidden">
+                    <h3>No hay información para mostrar de acuerdo a los filtros seleccionados</h3>
+                    <h3>Modifique los filtros.</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- ******************* Muestra todas las tarjetas ****************** -->
         <section>
             <div id="cont-tarj" class="hidden">
                 <div id="content-tarjetas">

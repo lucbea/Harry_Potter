@@ -20,14 +20,10 @@
     display: grid;
     row-gap: 30px;
     column-gap: 20px;
-<<<<<<< HEAD
     justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
     justify-items: center;
 
-=======
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
->>>>>>> main
     @include responsive($breakpoints, lg) {
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
         justify-items: center;
@@ -42,10 +38,7 @@
     position: relative;
     overflow: hidden;
     height: 230px;
-<<<<<<< HEAD
     width:100%;
-=======
->>>>>>> main
     border-radius: 10px;
     box-shadow: rgb(0 0 0) 0px 0px 4px 0px, rgb(0 0 0 / 12%) 0px 3px 1px -2px, rgb(0 0 0 / 20%) 0px 1px 5px 0px;
     transition: transform 0.7s ease;
