@@ -20,7 +20,11 @@
     gap: 10px;
     align-items: flex-end;
     margin-bottom: 3px;
+<<<<<<< HEAD
     width: 96%;
+=======
+    width: 90%;
+>>>>>>> main
     @include responsive($breakpoints, sm, md, lg) {
         @include comun-filtros-vs;
     }
