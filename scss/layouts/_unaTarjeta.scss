@@ -1,51 +1,52 @@
 #cont-total-una-tarj {
-    margin:auto;
-
-    @include responsive($breakpoints, sm) {
-        // height:auto;
-    }
+    margin: auto;
+    position: relative;
 }
+
+
 #cont-una-tarj {
     margin-inline: 10px;
     margin-block: 10px;
-    border: 2px  solid white;
+    border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0px 0px 7px 0px #453e3e;
-    position:relative;
-    height:500px;
+    position: relative;
+    height: 500px;
     overflow: hidden;
     max-width: 700px;
-    margin:auto;
+    margin: auto;
     @include responsive($breakpoints, sm) {
-        display:flex;
+        display: flex;
         justify-content: flex-end;
-        overflow:hidden;
-        height:320px;
+        overflow: hidden;
+        height: 320px;
     }
 }
 
-#imagen-una{
-    object-fit:cover;
-    position:relative;
+
+#imagen-una {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    position: relative;
     border-radius: 10px;
     @include responsive($breakpoints, sm) {
-        width:80%;
-        height:auto;
-        display:block;
-    }
-    @include responsive($breakpoints, xsm) {
+        width: 80%;
+        height: auto;
+        display: block;
     }
 }
 
+
 #img-una {
-    position:absolute;
-    top: -30px;
-    left:50%;
-    transform: translateX(-50%);
-    @include responsive($breakpoints, sm) {
-        transform: translateX(-40%);
-    }
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:top;
+    overflow:hidden;
+
 }
+
 
 #datos-una {
     position: absolute;
@@ -53,55 +54,95 @@
     left: 0px;
     z-index: 49;
     width: 100%;
-    height:200px;
+    height: auto;
     background-color: rgba(240, 233, 233, 0.648);
     padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    display: grid;
-    gap: 3px;
-    grid-template-rows: repeat(3, minmax(min(20%, 18px), 60%));
+    justify-content: space-evenly;
+    gap: 10px;
     @include responsive($breakpoints, sm) {
-        border-bottom-right-radius:0px;
-        border-top-left-radius:10px;
-        width:50%;
-        height:100%;
-        padding:25px;
+        width: 50%;
+        height: 100%;
+        padding: 25px;
         background: linear-gradient(to right, rgb(242, 239, 239) 70%, rgba(255, 255, 255, 0));
     }
 }
 
+
+.con-tit {
+    background-color: rgba(196, 177, 108, 0.663);
+    height: 45px;
+    width: -webkit-fill-available;
+    position: absolute;
+    top: -45px;
+    left: -10px;
+    @include responsive($breakpoints, sm) {
+        height: 45px;
+        width: -webkit-fill-available;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background: linear-gradient(to right, rgba(196, 177, 108, 0.663) 0%, rgba(196, 177, 108, 0.663) 80%, rgba(196, 177, 108, 0.663) 88%, transparent 100%);
+    }
+}
+
+
 #nomb-una {
+    position: absolute;
+    top: -40px;
     color: black;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 900;
     font-family: 'Della Respira';
     text-shadow: 1px 1px 1px rgb(244, 235, 235);
+    @include responsive($breakpoints, sm) {
+        top: 25px;
+    }
 }
 
 
-.info-una { 
+.info-una {
     font-size: 14px;
     font-weight: bold;
     font-family: 'Della Respira';
     @include responsive($breakpoints, sm) {
-        font-size:16px;
+        font-size: 16px;
+        margin-top: 20px;
     }
 }
 
-.info-tres{
-    font-size: 14px;
+
+.info-tres {
+    font-size: 12px;
     font-weight: bold;
     font-family: 'Della Respira';
     @include responsive($breakpoints, sm) {
-        margin-top:3px;
+        margin-top: 53px;
     }
 }
+
 
 .info-dos {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     font-family: 'Della Respira';
-  
+}
+
+
+#contTarjPost {
+    font-size: 12px;
+    color: #118611;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    z-index: 110;
+    text-shadow: 0px 1px 1px black;
+    background-color: rgba(255, 255, 255, 0.5803921569);
+    padding: 5px;
+    box-shadow: 0 0 6px 0px black;
+    width: auto;
+    max-width: 90%;
+    margin: auto;
 }

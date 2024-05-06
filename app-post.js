@@ -1,14 +1,7 @@
-// Evento Nueva Tarjeta 
 $btnNuevaTarj.addEventListener("click", () => {
-    console.log("voy a mostrar formulario")
-    mostrarCont($formTarj);
-    $imgForm.classList.add ("hidden");
+    ocultarCont();
+    mostrarCont($formTarj, $contBtnsNuevaTarj, $datImg);
     $datImg.classList.remove("ocuparParteCont");
-    
-    $contBtnsEditTarj.classList.add("hidden");
-    $confBorrarTarj.classList.add("hidden");
-    $contBtnsNuevaTarj.classList.remove("hidden");
-    
     $inpNombForm.value = "";
     $inpUrlForm.value = "";
     $inpInfoRelForm.value = "";
@@ -17,39 +10,30 @@ $btnNuevaTarj.addEventListener("click", () => {
 });
 
 
-// Evento que activa todo el proceso POST
 $btnSubmitPost.addEventListener("click", (event) => {
         event.preventDefault();
-        console.log("El botón fue clickeado");
         let pers = armarObjNuevoPers(event);
-        if (pers) { 
+        if (pers) {
             postFetch(event, pers);
-            llamadoFetch("", true, "mostrar");
-        } else {
-            // errorCampoForm();
-            console.log("error en objeto para post");
         }
     });
-    
 
 
 const postFetch = (event, nuevoPers) => {
     event.preventDefault();
-    console.log("Ingresé a Post", nuevoPers);
     fetch("https://661c5d0de7b95ad7fa6a3986.mockapi.io/api/harryPotter/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" }, 
-        body: JSON.stringify(nuevoPers) 
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(nuevoPers)
     })
         .then((res) => {
             if (!res.ok) {
-                throw new Error("Error al agregar el objeto"); 
+                throw new Error("Error al agregar el objeto");
             }
-            return res.json(); 
+            return res.json();
         })
         .then((data) => {
-            llamadoFetch("", true, "mostrar");
-            console.log(data); 
+            mostrarUnaTarj(data, true);
         })
         .catch((error) => console.log(error))
         .finally(() => console.log("Terminé POST"));
@@ -59,9 +43,7 @@ const postFetch = (event, nuevoPers) => {
 const armarObjNuevoPers = (event) => {
     event.preventDefault();
     let band = false;
-    console.log("band:", band);
     band = validarForm(band);
-
     if (band) {
         let nombre = $inpNombForm.value;
         let imagenURL = $inpUrlForm.value;
@@ -79,37 +61,28 @@ const armarObjNuevoPers = (event) => {
             "origen": origen,
             "estado": estado
         };
-        console.log(pers);
         return pers
 
-    } else {
-        // errorCampoForm();
-        console.log("error en objeto para post");
-    }
+    } 
 };
 
 
 const validarForm = (band) => {
     if ($inpNombForm.value === '' || $inpUrlForm.value === '' || $inpInfoRelForm.value === '' || $inpMasTextForm.value === '') {
-        console.log("formulario con VACÍOS")
-        $fondoModal.classList.remove("hidden");
-        $contErrorForm.classList.remove("hidden");
-        return band
+        mostrarCont($formTarj, $contBtnsNuevaTarj, $datImg, $fondoModal, $contErrorForm);
+        return band;
     } else {
-        console.log("formulario OK")
         return band = true;
     }
 }
 
 
-//Evento Cancelar nueva Tarjeta 
 $btnCancPost.addEventListener("click", (event) => {
     event.preventDefault();
-    $imgForm.classList.add("hidden");
-    enlableSpinner.style.display = 'block'
-
+    ocultarCont();
+    $contSpinner.style.display = 'flex';
     setTimeout(() => {
-        enlableSpinner.style.display = 'none';
+        $contSpinner.style.display = 'none';
         mostrarCont($contTarj, $contFiltrosVs);
     }, 2000);
     document.body.scrollIntoView({block: 'start' });

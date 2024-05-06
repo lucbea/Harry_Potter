@@ -2,29 +2,20 @@ form {
     width: 100%;
 }
 
-// .form-tarj {
-    
-    
-// }
-#formulario{
-    max-width:750px;
-    margin:auto;
-    @include responsive($breakpoints, sm) {
-        // margin-inline: 5px;
-    }
 
+#formulario {
+    max-width: 750px;
+    margin: auto;
     @include responsive($breakpoints, xsm) {
         padding-inline: 15px;
         padding-block: 3px;
         border: 1px solid rgba(29, 27, 27, 0.689);
         border-radius: 10px;
     }
-
     @include responsive($breakpoints, md) {
         padding-inline: 25px;
     }
 }
-
 
 
 .ing-dat {
@@ -33,41 +24,37 @@ form {
     position: relative;
 }
 
+
 .ing-dat:focus {
     min-width: 250px;
 }
+
 
 label {
     font-family: "Della Respira", sans-serif;
     font-size: 12px;
 }
+
+
 .spanFilForm {
     font-size: 8px;
 }
-
-// select option:checked {
-    // background-color: #65646095;
-// }
 
 
 .filtros-vs select,
 input {
     height: 28px;
     font-family: "Della Respira", sans-serif;
-    /* text-align:left; */
     font-size: 11px;
     font-weight: 500;
-    /* margin-block: 5px 10px; */
     width: 100%;
     color: #3d3b3c;
     background-color: #ffffff;
     border: 1px solid #bdc0c2;
-
-    /* display: flex; */
     justify-content: center;
     align-items: center;
-
 }
+
 
 input {
     border-radius: 5px;
@@ -82,42 +69,41 @@ i {
     z-index: 10;
 }
 
-/* .ingresoDatos {
-    height: inherit;
-} */
 
 .icon-valido {
     color: #2ccd49;
 }
 
+
 .icon-invalido {
     color: #761921;
 }
 
-/* ingreso formulario - esperando datos - borde lila */
+
 input:focus,
 select:focus .boton:focus {
-    /* box-shadow: 0px 0px 7px #4f4250;                 */
     outline: 0;
     box-shadow: inset 0px 0px 7px #4f4250, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
 
-/* ingreso formulario */
+
 input:valid:focus {
     border: 1px solid rgba(0, 0, 0, 0.486);
     box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
-    
 }
+
 
 input:invalid:not(:placeholder-shown):focus {
     border: 1px solid #f5414f;
     box-shadow: inset 0px 0px 7px #f5414f, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
 
+
 input:invalid:not(:placeholder-shown) {
     border: 1px solid #e33946;
     box-shadow: 0px 0px 3px #e33946;
 }
+
 
 input:valid {
     border: 1px solid #7aa37c;
@@ -126,7 +112,7 @@ input:valid {
     box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
 
-/* iconos de valido o inválido para cada dato no mostrado */
+
 .icon-invalido,
 .icon-valido {
     display: none;
@@ -137,17 +123,9 @@ input:valid {
 }
 
 
-// textarea:valid~.icon-valido, textarea:not(:placeholder-shown):invalid~.icon-invalido,
-// input:valid~.icon-valido,
-// input:not(:placeholder-shown):invalid~.icon-invalido
-//  {
-//     display: block;
-// }
-
 input:valid~.icon-valido,
 input:not(:placeholder-shown):invalid~.icon-invalido {
     display: flex;
-    // background-color: #761921;
 }
 
 
@@ -156,38 +134,26 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
     box-shadow: inset 0px 0px 10px #777750, 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
 }
 
+
 #formulario select:focus {
     font-style: italic;
     font-weight: 800;
     font-size: 11px;
-    /* text-shadow:  0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);  */
-    /* display:flex; */
-    /* justify-content: center;
-    background-color: #ffffff; */
 }
+
 
 #formulario select option:checked {
     background-color: #65646095;
-    /* font-size: 14px; */
 }
 
 
-
-/* lo que viene es para ventana grande */
 #cont-filtros-url {
     gap: 10px;
-
-    // estoy viendo contenedor filtros
-    // @include responsive($breakpoints, sm, md, lg) {
-    //     display: grid;
-    //     grid-template-columns: minmax(min(100%, 78px), 60%) minmax(0, 40%);
-    //     justify-content: space-evenly;
-    // }
-
     @include responsive($breakpoints, md, lg) {
         gap: 20px;
     }
 }
+
 
 .ocuparParteCont {
     @include responsive($breakpoints, sm, md, lg) {
@@ -197,21 +163,20 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
     }
 }
 
+
 .btns {
     gap: 20px;
     display: flex;
     justify-content: center;
 }
 
-// .btns .boton {}
-
-/* Que los botones del formulario tengan el mismo ancho */
 
 #conten-img-form {
     width: 80%;
     display: flex;
     justify-content: center;
 }
+
 
 #img-form {
     min-width: 200px;
@@ -222,14 +187,16 @@ input:not(:placeholder-shown):invalid~.icon-invalido {
     border: 2px solid rgba(62, 61, 61, 0.393);
     @include responsive($breakpoints, sm) {
         height: 150px;
-        margin-top:15px;
+        margin-top: 15px;
     }
 }
+
 
 #imag {
     max-width: 100%;
     object-fit: cover;
 }
+
 
 #img-form:hover {
     box-shadow: 0px 0px 0px 0px rgb(0 0 0), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0);
